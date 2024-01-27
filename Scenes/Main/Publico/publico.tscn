@@ -31,10 +31,10 @@ position = Vector2(-11.3266, -54.3673)
 scale = Vector2(0.577569, 0.577569)
 texture = ExtResource("5_djiy1")
 
-[node name="peticionresult" type="Sprite2D" parent="peticionglobo/peticionicono"]
+[node name="peticionresult" type="Sprite2D" parent="peticionglobo"]
 visible = false
-position = Vector2(-7.84427, 0)
-scale = Vector2(39.7117, 39.7117)
+position = Vector2(-15.8572, -54.3673)
+scale = Vector2(22.9362, 22.9362)
 texture = ExtResource("6_ytqtf")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
