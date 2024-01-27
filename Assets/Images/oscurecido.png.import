@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4ufhew7bdc7r"
-path="res://.godot/imported/foco.png-4aab9969574253a42b297225d2ec0934.ctex"
+uid="uid://b14rmlpddpi7t"
+path="res://.godot/imported/oscurecido.png-9866ec18150224865921e11c6e5808a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/foco.png"
-dest_files=["res://.godot/imported/foco.png-4aab9969574253a42b297225d2ec0934.ctex"]
+source_file="res://Assets/Images/oscurecido.png"
+dest_files=["res://.godot/imported/oscurecido.png-9866ec18150224865921e11c6e5808a3.ctex"]
 
 [params]
 
