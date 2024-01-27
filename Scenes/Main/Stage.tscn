@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8r2kugas11x5"]
+[gd_scene load_steps=5 format=3 uid="uid://crfhs4t2pbcds"]
 
 [ext_resource type="Script" path="res://Scripts/stage.gd" id="1_8emga"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="2_m8l77"]
-[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="3_wk6wh"]
+[ext_resource type="PackedScene" path="res://Scenes/Main/Chiquito.tscn" id="3_wk6wh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 120.5)

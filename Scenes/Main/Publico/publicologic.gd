@@ -3,6 +3,7 @@ extends Node2D
 var animo = 100
 var peticiones = ['payaso', 'negro', 'corcheas', 'berenjena']
 var peticiones_valor = [25, 25, 25, 25]
+var peticiones_icon = ['res://Assets/Images/payaso.png', 'res://Assets/Images/calavera.png', 'res://Assets/Images/corchea.png', 'res://Assets/Images/berenjena.png']
 var peticiones_randtime_wait = [7, 14]
 var peticiones_randtime_next = [10, 20]
 var descenso = 1
