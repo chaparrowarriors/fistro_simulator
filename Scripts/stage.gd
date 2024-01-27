@@ -13,11 +13,10 @@ func _process(delta):
 func _input(event):
 	print(event)
 	if Input.is_action_just_pressed("ChisteNegro"):
-		print("Chiste Negro")
 		$Chiquito.showChiste(1)
-	if Input.is_action_just_pressed("Coplilla"):
-		$Chiquito.showChiste(2)
 	if Input.is_action_just_pressed("ChisteVerde"):
+		$Chiquito.showChiste(2)
+	if Input.is_action_just_pressed("Coplilla"):
 		$Chiquito.showChiste(3)
 	if Input.is_action_just_pressed("ChisteAbsurdo"):
 		$Chiquito.showChiste(4)

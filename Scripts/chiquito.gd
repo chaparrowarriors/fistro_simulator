@@ -10,11 +10,15 @@ var chisteOn = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var iconos = ["Bocadillo/Icono1", "Bocadillo/Icono2", "Bocadillo/Icono3", "Bocadillo/Icono4"]
+var audioChistes = ["AudioChiste1", "AudioChiste2", "AudioChiste3", "AudioChiste4"]
 
 func _ready():
 	$AnimatedSprite2D.play('default')
 
 func _physics_process(delta):
+	
+	if chisteOn: 
+		return
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -45,9 +49,12 @@ func showChiste(chiste):
 	chiste -= 1
 	get_node(iconos[chiste]).visible = 1
 	$Bocadillo.visible = 1
+	$AnimatedSprite2D.play('habla')
+	get_node(audioChistes[chiste]).play()
 	await get_tree().create_timer(3).timeout
 	$Bocadillo.visible = 0
 	get_node(iconos[chiste]).visible = 0
+	$AnimatedSprite2D.play('default')
 	
 	chisteOn = false
 

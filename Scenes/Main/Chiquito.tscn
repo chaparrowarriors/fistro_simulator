@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgc1uk8g5qwls"]
+[gd_scene load_steps=21 format=3 uid="uid://dgc1uk8g5qwls"]
 
 [ext_resource type="Script" path="res://Scripts/chiquito.gd" id="1_jys0f"]
 [ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="2_h2bjc"]
@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bqpcbim01m3r4" path="res://Assets/Images/berenjena.png" id="5_888l7"]
 [ext_resource type="Texture2D" uid="uid://b4mpkpj70hx8g" path="res://Assets/Images/corchea.png" id="6_2ecla"]
 [ext_resource type="Texture2D" uid="uid://coljc2qf7ar07" path="res://Assets/Images/payaso.png" id="7_m7cix"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4nch"]
-atlas = ExtResource("2_h2bjc")
-region = Rect2(0, 0, 428, 523)
+[ext_resource type="AudioStream" uid="uid://crgvkpfve2nit" path="res://Assets/Sonidos/pero_que_esta_hachiendo_con__er_cuerpo_humano.mp3" id="8_dkjwc"]
+[ext_resource type="AudioStream" uid="uid://dp68yxvmyuqfc" path="res://Assets/Sonidos/y_si_quiere_aceituna_negra_compra_una_cabra.mp3" id="9_hqaq6"]
+[ext_resource type="AudioStream" uid="uid://bowr8toaal4b0" path="res://Assets/Sonidos/te_habla_un_hombre_malo_de_la_pradera.mp3" id="10_vhtnl"]
+[ext_resource type="AudioStream" uid="uid://qsrpsu8pc1sj" path="res://Assets/Sonidos/e_cannn_ecan_de_mor_demor_ecan.mp3" id="11_yvxeh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p104d"]
 atlas = ExtResource("2_h2bjc")
@@ -24,12 +24,25 @@ region = Rect2(856, 0, 428, 523)
 atlas = ExtResource("2_h2bjc")
 region = Rect2(1284, 0, 428, 523)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt2gu"]
+atlas = ExtResource("2_h2bjc")
+region = Rect2(428, 0, 428, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyros"]
+atlas = ExtResource("2_h2bjc")
+region = Rect2(856, 0, 428, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxix2"]
+atlas = ExtResource("2_h2bjc")
+region = Rect2(1284, 0, 428, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouwfc"]
+atlas = ExtResource("2_h2bjc")
+region = Rect2(0, 0, 428, 523)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_d6c7e"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4nch")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p104d")
 }, {
@@ -38,10 +51,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7qt51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt2gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyros")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxix2")
 }],
 "loop": true,
 "name": &"default",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouwfc")
+}],
+"loop": true,
+"name": &"habla",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufj73"]
@@ -55,7 +85,6 @@ script = ExtResource("1_jys0f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_d6c7e")
-frame_progress = 0.234673
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 0)
@@ -91,3 +120,15 @@ visible = false
 position = Vector2(0, -40)
 scale = Vector2(0.5, 0.516)
 texture = ExtResource("7_m7cix")
+
+[node name="AudioChiste1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_vhtnl")
+
+[node name="AudioChiste2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dkjwc")
+
+[node name="AudioChiste3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_yvxeh")
+
+[node name="AudioChiste4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_hqaq6")
