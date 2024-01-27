@@ -32,11 +32,13 @@ func _process(delta):
 
 func animo_bar():
 	animo -= descenso
-	if animo >= 66:
+	if animo >= 75:
 		$expresion.texture = load("res://Assets/Images/publicoexpress1.png")
-	elif animo < 66 and animo >= 33:
+	elif animo >= 50:
 		$expresion.texture = load("res://Assets/Images/publicoexpress2.png")
-	elif animo < 33:
+	elif animo >= 25:
+		$expresion.texture = load("res://Assets/Images/publicoexpress3.png")
+	else:
 		$expresion.texture = load("res://Assets/Images/publicoexpress3.png")
 
 func _on_timer_timeout():
