@@ -71,8 +71,6 @@ func actuarBaile():
 	var escenaBaile = load(path)
 	var instanciaBaile = escenaBaile.instantiate()
 	add_child(instanciaBaile)
-	
-	$TimerFoco.start()
 
 func _on_timer_foco_timeout():
 	actuarFoco()

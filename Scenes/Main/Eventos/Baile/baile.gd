@@ -179,16 +179,19 @@ func _on_qte_10_input_event(viewport, event, shape_idx):
 			secuen_act = secuen_act + 1
 			
 func fin_baile(qte_result):
+	$Timer.stop()
 	Global.baile_result = qte_result
-	
-	if qte_result == true:
-		print("EXITO")
-	else:
-		print("FALLO")
+	get_node("/root/Stage/Oscuridad").modulate.a = 0
+	get_node("/root/Stage/TimerFoco").stop()
+	get_node("/root/Stage/TimerFoco").start()
+	#if qte_result == true:
+		#print("EXITO")
+	#else:
+		#print("FALLO")
 		
-	get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
 
 func _on_timer_timeout():
-	print("TIMEOUT")
-	Global.baile_result = false
-	get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
+	#print("TIMEOUT")
+	fin_baile(false)
+	#get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
