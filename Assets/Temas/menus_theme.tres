@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://x3muhlvxsd7e"]
+
+[ext_resource type="FontFile" uid="uid://blkwh2jsvx3d0" path="res://Assets/Fuentes/Slackey.ttf" id="1_t8ok1"]
+[ext_resource type="FontFile" uid="uid://donfeh72425am" path="res://Assets/Fuentes/LITHOB.ttf" id="2_lqj8m"]
+
+[resource]
+default_font = ExtResource("2_lqj8m")
+Label/fonts/font = ExtResource("1_t8ok1")
