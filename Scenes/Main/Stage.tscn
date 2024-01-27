@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8r2kugas11x5"]
+[gd_scene load_steps=13 format=3 uid="uid://b8r2kugas11x5"]
 
 [ext_resource type="Script" path="res://Scripts/stage.gd" id="1_8emga"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="2_m8l77"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://20wml2k1kjku" path="res://Scenes/Main/Publico/publico.tscn" id="5_bddh1"]
 [ext_resource type="Texture2D" uid="uid://bmxf5qajilfnt" path="res://Assets/Images/mesa.png" id="5_t4a5j"]
 [ext_resource type="Texture2D" uid="uid://g33d38y05vrd" path="res://Assets/Images/mesalejos.png" id="6_m1viw"]
+[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="9_xshp5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 82.25)
@@ -88,6 +89,14 @@ texture = ExtResource("6_m1viw")
 offset_right = 1937.0
 offset_bottom = 1138.0
 texture = ExtResource("2_m8l77")
+
+[node name="Foco" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 0.701961)
+position = Vector2(314, 622)
+scale = Vector2(0.90521, 1.2549)
+texture = ExtResource("9_xshp5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
 
 [node name="Chiquito" parent="." instance=ExtResource("3_wk6wh")]
 position = Vector2(900, 940)
