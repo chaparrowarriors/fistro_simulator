@@ -1,13 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://6hdhbk4rh3p4"]
+[gd_scene load_steps=3 format=3 uid="uid://6hdhbk4rh3p4"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Eventos/Baile/baile.gd" id="1_67drc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7d67s"]
+radius = 56.0357
 
 [node name="Baile" type="Node2D"]
 script = ExtResource("1_67drc")
 
-[node name="qte_icon" type="Sprite2D" parent="."]
+[node name="Timer" type="Timer" parent="."]
+
+[node name="qte" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte"]
 position = Vector2(600, 200)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
