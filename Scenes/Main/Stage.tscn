@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8r2kugas11x5"]
+[gd_scene load_steps=33 format=3 uid="uid://b8r2kugas11x5"]
 
 [ext_resource type="Script" path="res://Scripts/stage.gd" id="1_8emga"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="2_m8l77"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="3_wk6wh"]
 [ext_resource type="PackedScene" uid="uid://20wml2k1kjku" path="res://Scenes/Main/Publico/publico.tscn" id="5_bddh1"]
 [ext_resource type="Texture2D" uid="uid://bmxf5qajilfnt" path="res://Assets/Images/mesa.png" id="5_t4a5j"]
+[ext_resource type="Texture2D" uid="uid://wx3ycxielmul" path="res://Assets/Images/hombre.png" id="5_tw6gf"]
 [ext_resource type="Texture2D" uid="uid://g33d38y05vrd" path="res://Assets/Images/mesalejos.png" id="6_m1viw"]
+[ext_resource type="Texture2D" uid="uid://cv4yjffemlqts" path="res://Assets/Images/anciano.png" id="6_vfos3"]
+[ext_resource type="Texture2D" uid="uid://cysnt2ovrq7a2" path="res://Assets/Images/mujer.png" id="7_5xis5"]
 [ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="9_xa3n1"]
 [ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="9_xshp5"]
 
@@ -19,6 +22,194 @@ size = Vector2(59, 1170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7ca0"]
 size = Vector2(94.5, 1143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buidy"]
+atlas = ExtResource("5_tw6gf")
+region = Rect2(1068, 0, 356, 456)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hwc1"]
+atlas = ExtResource("5_tw6gf")
+region = Rect2(0, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpkes"]
+atlas = ExtResource("5_tw6gf")
+region = Rect2(373, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtm2x"]
+atlas = ExtResource("5_tw6gf")
+region = Rect2(718, 0, 359, 459)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3xdh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buidy")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hwc1")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpkes")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtm2x")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scyon"]
+atlas = ExtResource("7_5xis5")
+region = Rect2(1100, 0, 361, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mvmv"]
+atlas = ExtResource("7_5xis5")
+region = Rect2(37, 0, 376, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cglp3"]
+atlas = ExtResource("7_5xis5")
+region = Rect2(399, 0, 361, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jr8j"]
+atlas = ExtResource("7_5xis5")
+region = Rect2(760, 0, 361, 561)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd42j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scyon")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mvmv")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cglp3")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jr8j")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1l7i"]
+atlas = ExtResource("6_vfos3")
+region = Rect2(1056, 0, 352, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01bt3"]
+atlas = ExtResource("6_vfos3")
+region = Rect2(0, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6h01"]
+atlas = ExtResource("6_vfos3")
+region = Rect2(362, 0, 362, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_165aw"]
+atlas = ExtResource("6_vfos3")
+region = Rect2(724, 0, 362, 459)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lx73c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1l7i")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01bt3")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6h01")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_165aw")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hxux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buidy")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hwc1")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpkes")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtm2x")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_8emga")
@@ -34,11 +225,6 @@ texture = ExtResource("2_yrv7y")
 position = Vector2(972.5, 1108.12)
 shape = SubResource("RectangleShape2D_xui4y")
 
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_28dyd")
-volume_db = -25.0
-autoplay = true
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -51,39 +237,74 @@ shape = SubResource("RectangleShape2D_qd8rg")
 position = Vector2(1930.25, 566.5)
 shape = SubResource("RectangleShape2D_k7ca0")
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_28dyd")
+volume_db = -25.0
+autoplay = true
+
 [node name="Publico1" parent="." instance=ExtResource("5_bddh1")]
 position = Vector2(324, 728)
 
-[node name="Sprite2D" type="Sprite2D" parent="Publico1"]
+[node name="expresion" type="AnimatedSprite2D" parent="Publico1"]
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_d3xdh")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico1"]
 position = Vector2(0, 168)
 texture = ExtResource("5_t4a5j")
 
 [node name="Publico2" parent="." instance=ExtResource("5_bddh1")]
 position = Vector2(964, 728)
 
-[node name="Sprite2D" type="Sprite2D" parent="Publico2"]
+[node name="expresion" type="AnimatedSprite2D" parent="Publico2"]
+position = Vector2(0, -42)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dd42j")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico2"]
 position = Vector2(0, 168)
 texture = ExtResource("5_t4a5j")
 
 [node name="Publico3" parent="." instance=ExtResource("5_bddh1")]
 position = Vector2(1590, 726)
 
-[node name="Sprite2D" type="Sprite2D" parent="Publico3"]
+[node name="expresion" type="AnimatedSprite2D" parent="Publico3"]
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lx73c")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico3"]
 position = Vector2(0, 168)
 texture = ExtResource("5_t4a5j")
 
 [node name="Publico4" parent="." instance=ExtResource("5_bddh1")]
 position = Vector2(652, 542)
 
-[node name="Sprite2D" type="Sprite2D" parent="Publico4"]
-position = Vector2(9, 93)
+[node name="expresion" type="AnimatedSprite2D" parent="Publico4"]
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_0hxux")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico4"]
+position = Vector2(9, 129)
 texture = ExtResource("6_m1viw")
 
 [node name="Publico5" parent="." instance=ExtResource("5_bddh1")]
 position = Vector2(1279, 531)
 
-[node name="Sprite2D" type="Sprite2D" parent="Publico5"]
-position = Vector2(9, 93)
+[node name="expresion" type="AnimatedSprite2D" parent="Publico5"]
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_d3xdh")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico5"]
+position = Vector2(9, 133)
 texture = ExtResource("6_m1viw")
 
 [node name="Escenario" type="TextureRect" parent="."]

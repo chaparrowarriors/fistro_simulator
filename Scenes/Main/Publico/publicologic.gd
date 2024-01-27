@@ -16,7 +16,7 @@ var change_opacidad = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().create_timer(2).timeout
-	var randtime = randf_range(1, 5)
+	var randtime = randi_range(1, 10)
 	#print(randtime)
 	await get_tree().create_timer(randtime).timeout
 	$timerAnimo.start()
@@ -37,13 +37,13 @@ func pauseTimer(pause):
 func animo_bar():
 	animo -= descenso
 	if animo >= 75:
-		$expresion.texture = load("res://Assets/Images/publicoexpress1.png")
+		$expresion.play('happy')
 	elif animo >= 50:
-		$expresion.texture = load("res://Assets/Images/publicoexpress2.png")
+		$expresion.play('normal')
 	elif animo >= 25:
-		$expresion.texture = load("res://Assets/Images/publicoexpress3.png")
+		$expresion.play('sad')
 	else:
-		$expresion.texture = load("res://Assets/Images/publicoexpress3.png")
+		$expresion.play('angry')
 
 func _on_timer_timeout():
 	animo_bar()
@@ -78,10 +78,12 @@ func recibir_chiste():
 	print(Global.chiste_result)
 	if Global.chiste_type == peticion_actual and Global.chiste_result == true:
 		animo += peticiones_valor[randpeti]
-		$peticionglobo/peticionresult.texture = load("res://Assets/Images/correct.png")
+		$peticionglobo/peticionresult.texture = load("res://Assets/Images/greentick.png")
 	if Global.chiste_type != peticion_actual and Global.chiste_result == false:
 		animo -= peticiones_valor[randpeti]
-		$peticionglobo/peticionresult.texture = load("res://Assets/Images/fallo.png")
+		$peticionglobo/peticionresult.texture = load("res://Assets/Images/redx.png")
+		$peticionglobo/peticionresult.scale.x = 0.2
+		$peticionglobo/peticionresult.scale.y = 0.2
 	if Global.chiste_type != peticion_actual and Global.chiste_result == true:
 		$peticionglobo/peticionresult.texture = load("res://Assets/Images/neutral.png")
 	if Global.chiste_type == peticion_actual and Global.chiste_result == false:

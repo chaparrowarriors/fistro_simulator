@@ -2,8 +2,8 @@ extends Node2D
 
 signal contarChiste
 
-var tiempo_foco = 4.0
-var baile
+var tiempo_foco = 30.0
+var baileOn = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TimerFoco.wait_time = tiempo_foco
@@ -13,14 +13,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	pass
+	
+func checkBaile():
+	if baileOn:
+		return
+		
 	if Global.zonaChiquito < 0.33 and $Foco1.visible == true:
-		baile = true
-	elif Global.zonaChiquito < 0.66 and $Foco2.visible == true:
-		baile = true
-	elif Global.zonaChiquito < 0.99 and $Foco3.visible == true:
-		baile = true
-	else:
-		baile = false
+		actuarBaile()
+	elif Global.zonaChiquito > 0.33 and Global.zonaChiquito < 0.66 and $Foco2.visible == true:
+		actuarBaile()
+	elif Global.zonaChiquito > 0.66 and $Foco3.visible == true:
+		actuarBaile()
 
 func _input(event):
 	if Input.is_action_just_pressed("ChisteNegro"):
@@ -32,8 +36,8 @@ func _input(event):
 	if Input.is_action_just_pressed("ChisteAbsurdo"):
 		$Chiquito.showChiste(4)
 	
-	if Input.is_action_just_pressed("Jump") and baile == true:
-		actuarBaile()
+	if Input.is_action_just_pressed("Jump"):
+		checkBaile()
 	
 	Global.zonaChiquito = $Chiquito.position.x / 1920
 
@@ -66,6 +70,7 @@ func actuarFoco():
 
 func actuarBaile():		
 	$Oscuridad.modulate.a = 0.75
+	baileOn = true
 	
 	var path = "res://Scenes/Main/Eventos/Baile/baile.tscn"
 	var escenaBaile = load(path)

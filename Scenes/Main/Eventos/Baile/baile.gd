@@ -184,6 +184,10 @@ func fin_baile(qte_result):
 	get_node("/root/Stage/Oscuridad").modulate.a = 0
 	get_node("/root/Stage/TimerFoco").stop()
 	get_node("/root/Stage/TimerFoco").start()
+	
+	get_node("/root/Stage/Foco1").visible = false
+	get_node("/root/Stage/Foco2").visible = false
+	get_node("/root/Stage/Foco3").visible = false
 	#if qte_result == true:
 		#print("EXITO")
 	#else:

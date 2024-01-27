@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://20wml2k1kjku"]
+[gd_scene load_steps=5 format=3 uid="uid://20wml2k1kjku"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Publico/publicologic.gd" id="1_e65hb"]
-[ext_resource type="Texture2D" uid="uid://cmsynlsnny10f" path="res://Assets/Images/publicobase.png" id="2_jm5mc"]
-[ext_resource type="Texture2D" uid="uid://u5wjv4wu3pmc" path="res://Assets/Images/publicoexpress1.png" id="3_i7nj0"]
 [ext_resource type="Texture2D" uid="uid://cbe6cli5ytsdo" path="res://Assets/Images/bocadillo.png" id="4_1h0py"]
+[ext_resource type="Texture2D" uid="uid://bfbeotvs2jfvg" path="res://Assets/Images/greentick.png" id="4_guixe"]
 [ext_resource type="Texture2D" uid="uid://bqpcbim01m3r4" path="res://Assets/Images/berenjena.png" id="5_djiy1"]
-[ext_resource type="Texture2D" uid="uid://swnohqgdnlou" path="res://Assets/Images/correct.png" id="6_ytqtf"]
 
 [node name="Publico" type="Node2D"]
 script = ExtResource("1_e65hb")
@@ -15,14 +13,6 @@ script = ExtResource("1_e65hb")
 [node name="timerPeticiones" type="Timer" parent="."]
 
 [node name="timerNextPetcion" type="Timer" parent="."]
-
-[node name="base" type="Sprite2D" parent="."]
-scale = Vector2(10, 10)
-texture = ExtResource("2_jm5mc")
-
-[node name="expresion" type="Sprite2D" parent="."]
-position = Vector2(2.08165e-12, -47)
-texture = ExtResource("3_i7nj0")
 
 [node name="peticionglobo" type="Sprite2D" parent="."]
 visible = false
@@ -38,8 +28,8 @@ texture = ExtResource("5_djiy1")
 [node name="peticionresult" type="Sprite2D" parent="peticionglobo"]
 visible = false
 position = Vector2(-15.8572, -54.3673)
-scale = Vector2(22.9362, 22.9362)
-texture = ExtResource("6_ytqtf")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_guixe")
 
 [connection signal="timeout" from="timerAnimo" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="timerPeticiones" to="." method="_on_timer_peticiones_timeout"]
