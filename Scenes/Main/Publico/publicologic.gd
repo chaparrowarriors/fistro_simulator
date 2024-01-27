@@ -75,22 +75,15 @@ func recibir_chiste():
 	if Global.chiste_type == peticion_actual and Global.chiste_result == true:
 		animo += peticiones_valor[randpeti]
 		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/correct.png")
-		$peticionglobo/peticionicono/peticionresult.visible = true
-		await get_tree().create_timer(1).timeout
-		$peticionglobo/peticionicono/peticionresult.visible = false
 	if Global.chiste_type != peticion_actual and Global.chiste_result == false:
 		animo -= peticiones_valor[randpeti]
 		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/fallo.png")
-		$peticionglobo/peticionicono/peticionresult.visible = true
-		await get_tree().create_timer(1).timeout
-		$peticionglobo/peticionicono/peticionresult.visible = false
 	if Global.chiste_type != peticion_actual and Global.chiste_result == true:
 		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/neutral.png")
-		$peticionglobo/peticionicono/peticionresult.visible = true
-		await get_tree().create_timer(1).timeout
-		$peticionglobo/peticionicono/peticionresult.visible = false
 	if Global.chiste_type == peticion_actual and Global.chiste_result == false:
 		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/neutral.png")
-		$peticionglobo/peticionicono/peticionresult.visible = true
-		await get_tree().create_timer(1).timeout
-		$peticionglobo/peticionicono/peticionresult.visible = false
+	
+	$peticionglobo/peticionicono/peticionresult.visible = true
+	await get_tree().create_timer(1).timeout
+	$peticionglobo/peticionicono/peticionresult.visible = false
+	$peticionglobo.visible = false

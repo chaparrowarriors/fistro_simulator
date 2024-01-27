@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://fi2f2myglv6k" path="res://Assets/Images/logo fondo.png" id="4_7bj04"]
 
 [node name="Chaparro" type="Sprite2D"]
-position = Vector2(638, 364)
+position = Vector2(961.5, 542)
+scale = Vector2(1.50945, 1.49444)
 texture = ExtResource("4_7bj04")
 script = ExtResource("1_vw3or")
 
