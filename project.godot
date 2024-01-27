@@ -13,3 +13,15 @@ config_version=5
 config/name="fistro_simulator"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Singletones/global.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
