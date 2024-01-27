@@ -64,7 +64,7 @@ func peticion():
 	#await get_tree().create_timer(randtime_wait).timeout
 	
 func peticion_next():
-	var randtime_next = randi_range(peticiones_randtime_next[0], peticiones_randtime_wait[1])
+	var randtime_next = randf_range(peticiones_randtime_next[0], peticiones_randtime_wait[1])
 	#await get_tree().create_timer(randtime_next).timeout
 	$timerNextPetcion.wait_time = randtime_next
 	$timerNextPetcion.start()
