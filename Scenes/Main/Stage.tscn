@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://crfhs4t2pbcds"]
+[gd_scene load_steps=12 format=3 uid="uid://b8r2kugas11x5"]
 
 [ext_resource type="Script" path="res://Scripts/stage.gd" id="1_8emga"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="2_m8l77"]
-[ext_resource type="PackedScene" path="res://Scenes/Main/Chiquito.tscn" id="3_wk6wh"]
-[ext_resource type="AudioStream" uid="uid://m6ouvxctliw0" path="res://Assets/Sonidos/prank-122485.mp3" id="4_sipbo"]
+[ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="2_yrv7y"]
+[ext_resource type="AudioStream" uid="uid://dcspstuf3ix1h" path="res://Assets/Sonidos/sevillanas.mp3" id="3_28dyd"]
+[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="3_wk6wh"]
+[ext_resource type="PackedScene" uid="uid://20wml2k1kjku" path="res://Scenes/Main/Publico/publico.tscn" id="5_bddh1"]
+[ext_resource type="Texture2D" uid="uid://bmxf5qajilfnt" path="res://Assets/Images/mesa.png" id="5_t4a5j"]
+[ext_resource type="Texture2D" uid="uid://g33d38y05vrd" path="res://Assets/Images/mesalejos.png" id="6_m1viw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 82.25)
@@ -17,13 +21,10 @@ size = Vector2(94.5, 1143)
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_8emga")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Fondo" type="TextureRect" parent="."]
 offset_right = 1937.0
 offset_bottom = 1138.0
-texture = ExtResource("2_m8l77")
-
-[node name="Chiquito" parent="." instance=ExtResource("3_wk6wh")]
-position = Vector2(900, 940)
+texture = ExtResource("2_yrv7y")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -32,8 +33,8 @@ position = Vector2(972.5, 1108.12)
 shape = SubResource("RectangleShape2D_xui4y")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_sipbo")
-volume_db = -15.0
+stream = ExtResource("3_28dyd")
+volume_db = -25.0
 autoplay = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -47,3 +48,46 @@ shape = SubResource("RectangleShape2D_qd8rg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(1930.25, 566.5)
 shape = SubResource("RectangleShape2D_k7ca0")
+
+[node name="Publico1" parent="." instance=ExtResource("5_bddh1")]
+position = Vector2(324, 728)
+
+[node name="Sprite2D" type="Sprite2D" parent="Publico1"]
+position = Vector2(0, 168)
+texture = ExtResource("5_t4a5j")
+
+[node name="Publico2" parent="." instance=ExtResource("5_bddh1")]
+position = Vector2(964, 728)
+
+[node name="Sprite2D" type="Sprite2D" parent="Publico2"]
+position = Vector2(0, 168)
+texture = ExtResource("5_t4a5j")
+
+[node name="Publico3" parent="." instance=ExtResource("5_bddh1")]
+position = Vector2(1590, 726)
+
+[node name="Sprite2D" type="Sprite2D" parent="Publico3"]
+position = Vector2(0, 168)
+texture = ExtResource("5_t4a5j")
+
+[node name="Publico4" parent="." instance=ExtResource("5_bddh1")]
+position = Vector2(652, 542)
+
+[node name="Sprite2D" type="Sprite2D" parent="Publico4"]
+position = Vector2(9, 93)
+texture = ExtResource("6_m1viw")
+
+[node name="Publico5" parent="." instance=ExtResource("5_bddh1")]
+position = Vector2(1279, 531)
+
+[node name="Sprite2D" type="Sprite2D" parent="Publico5"]
+position = Vector2(9, 93)
+texture = ExtResource("6_m1viw")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1138.0
+texture = ExtResource("2_m8l77")
+
+[node name="Chiquito" parent="." instance=ExtResource("3_wk6wh")]
+position = Vector2(900, 940)

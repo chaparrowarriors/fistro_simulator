@@ -116,6 +116,7 @@ func fin_baile(qte_result):
 	$Bocadillo.visible = 0
 	$qte_icon.texture = null
 	Global.chisteQTEon = false
+	get_node("/root/Stage").recibirChiste()
 	
 
 func changeDir(direction):
