@@ -11,7 +11,6 @@ func _process(delta):
 	pass
 
 func _input(event):
-	print(event)
 	if Input.is_action_just_pressed("ChisteNegro"):
 		$Chiquito.showChiste(1)
 	if Input.is_action_just_pressed("ChisteVerde"):

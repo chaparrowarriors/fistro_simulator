@@ -28,8 +28,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	changeDir(direction)
 		
@@ -43,21 +41,24 @@ func _physics_process(delta):
 func showChiste(chiste):
 	if chisteOn:
 		return
-	
-	chisteOn = true
-	
 	chiste -= 1
+	initChiste(chiste)
+	await get_tree().create_timer(3).timeout
+	endChiste(chiste)
+
+func initChiste(chiste):
+	chisteOn = true
 	get_node(iconos[chiste]).visible = 1
 	$Bocadillo.visible = 1
 	$AnimatedSprite2D.play('habla')
 	get_node(audioChistes[chiste]).play()
-	await get_tree().create_timer(3).timeout
+
+func endChiste(chiste):
+	print(chiste)
 	$Bocadillo.visible = 0
 	get_node(iconos[chiste]).visible = 0
 	$AnimatedSprite2D.play('default')
-	
 	chisteOn = false
-
 
 func changeDir(direction):
 	if direction < 0:
