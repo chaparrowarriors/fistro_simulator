@@ -1,7 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgc1uk8g5qwls"]
+[gd_scene load_steps=14 format=3 uid="uid://dgc1uk8g5qwls"]
 
 [ext_resource type="Script" path="res://Scripts/chiquito.gd" id="1_jys0f"]
 [ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="2_h2bjc"]
+[ext_resource type="Texture2D" uid="uid://cbe6cli5ytsdo" path="res://Assets/Images/bocadillo.png" id="3_ligok"]
+[ext_resource type="Texture2D" uid="uid://oic0mjmsnsc6" path="res://Assets/Images/calavera.png" id="4_m4fdx"]
+[ext_resource type="Texture2D" uid="uid://bqpcbim01m3r4" path="res://Assets/Images/berenjena.png" id="5_888l7"]
+[ext_resource type="Texture2D" uid="uid://b4mpkpj70hx8g" path="res://Assets/Images/corchea.png" id="6_2ecla"]
+[ext_resource type="Texture2D" uid="uid://coljc2qf7ar07" path="res://Assets/Images/payaso.png" id="7_m7cix"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4nch"]
 atlas = ExtResource("2_h2bjc")
@@ -56,3 +61,33 @@ frame_progress = 0.234673
 position = Vector2(8, 0)
 scale = Vector2(6, 6)
 shape = SubResource("CapsuleShape2D_ufj73")
+
+[node name="Bocadillo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(67, -208)
+scale = Vector2(0.669158, 0.649006)
+texture = ExtResource("3_ligok")
+
+[node name="Icono1" type="Sprite2D" parent="Bocadillo"]
+visible = false
+position = Vector2(0, -40)
+scale = Vector2(0.5, 0.516)
+texture = ExtResource("4_m4fdx")
+
+[node name="Icono2" type="Sprite2D" parent="Bocadillo"]
+visible = false
+position = Vector2(0, -40)
+scale = Vector2(0.5, 0.516)
+texture = ExtResource("5_888l7")
+
+[node name="Icono3" type="Sprite2D" parent="Bocadillo"]
+visible = false
+position = Vector2(0, -40)
+scale = Vector2(0.5, 0.516)
+texture = ExtResource("6_2ecla")
+
+[node name="Icono4" type="Sprite2D" parent="Bocadillo"]
+visible = false
+position = Vector2(0, -40)
+scale = Vector2(0.5, 0.516)
+texture = ExtResource("7_m7cix")
