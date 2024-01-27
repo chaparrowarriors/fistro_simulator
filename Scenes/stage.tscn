@@ -1,36 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8r2kugas11x5"]
+[gd_scene load_steps=5 format=3 uid="uid://b8r2kugas11x5"]
 
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="1_vf372"]
-[ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="2_4tvlf"]
-[ext_resource type="Script" path="res://Scenes/chiquito.gd" id="2_x8gc7"]
+[ext_resource type="Script" path="res://Scenes/stage.gd" id="1_xl7kd"]
+[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="3_7s7y2"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g5saj"]
-distance = -552.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufj73"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
+size = Vector2(1280, 120.5)
 
 [node name="Stage" type="Node2D"]
+script = ExtResource("1_xl7kd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_vf372")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Chiquito" parent="." instance=ExtResource("3_7s7y2")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 100)
-shape = SubResource("WorldBoundaryShape2D_g5saj")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(500, 500)
-script = ExtResource("2_x8gc7")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_4tvlf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(8, 0)
-scale = Vector2(6, 6)
-shape = SubResource("CapsuleShape2D_ufj73")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(639, 733.25)
+shape = SubResource("RectangleShape2D_xui4y")
