@@ -3,6 +3,7 @@ extends Node2D
 var secuen_max = 10  # Máximo de inputs necesarios para superar el Baile
 var tiempo_max = 20.0 # Segundos máximos para realizar la secuencia.
 var secuen_act = 1   # Secuencia actual esperada 
+var opacidad = 0.01 # Factor de cambio de opacidad
 
 # Constantes de posición de pantalla x min/max y y min/max
 var viewport_tam
@@ -22,7 +23,6 @@ var qte6_com = false
 var qte7_com = false
 var qte8_com = false
 var qte9_com = false
-var qte10_com = false
 
 func _ready():
 	$Timer.wait_time = tiempo_max
@@ -41,6 +41,7 @@ func _ready():
 	$qte7.modulate.a = 0
 	$qte8.modulate.a = 0
 	$qte9.modulate.a = 0
+	$qte10.modulate.a = 0
 	
 	$qte1.visible = true
 	
@@ -64,48 +65,49 @@ func inicializar_posicicones():
 
 func cambiar_opacidad():
 	
-	if $qte3.visible == false and $qte2.modulate.a < 1:
-		$qte2.modulate.a = $qte2.modulate.a + 0.01
+	if $qte3.visible == false and $qte2.modulate.a < 1 and qte2_com == false:
+		$qte2.modulate.a = $qte2.modulate.a + opacidad
 		$qte2.visible = true
 	
 	if $qte4.visible == false and $qte3.modulate.a < 1 and ($qte2.modulate.a > 1 or qte2_com == true):
-		$qte3.modulate.a = $qte3.modulate.a + 0.01
+		$qte3.modulate.a = $qte3.modulate.a + opacidad
 		if qte2_com == false:
 			$qte3.visible = true
 		
 	if $qte5.visible == false and $qte4.modulate.a < 1 and ($qte3.modulate.a > 1 or qte3_com == true):
-		$qte4.modulate.a = $qte4.modulate.a + 0.01
+		$qte4.modulate.a = $qte4.modulate.a + opacidad
 		if qte3_com == false:
 			$qte4.visible = true
 				
 	if $qte6.visible == false and $qte5.modulate.a < 1 and ($qte4.modulate.a > 1 or qte4_com == true):
-		$qte5.modulate.a = $qte5.modulate.a + 0.01
+		$qte5.modulate.a = $qte5.modulate.a + opacidad
 		if qte4_com == false:
 			$qte5.visible = true
 					
 	if $qte7.visible == false and $qte6.modulate.a < 1 and ($qte5.modulate.a > 1 or qte5_com == true):
-		$qte6.modulate.a = $qte6.modulate.a + 0.01
+		$qte6.modulate.a = $qte6.modulate.a + opacidad
 		if qte5_com == false:
 			$qte6.visible = true
 				
 	if $qte8.visible == false and $qte7.modulate.a < 1 and ($qte6.modulate.a > 1 or qte6_com == true):
-		$qte7.modulate.a = $qte7.modulate.a + 0.01
+		$qte7.modulate.a = $qte7.modulate.a + opacidad
 		if qte6_com == false:
 			$qte7.visible = true
 				
 	if $qte9.visible == false and $qte8.modulate.a < 1 and ($qte7.modulate.a > 1 or qte7_com == true):
-		$qte8.modulate.a = $qte8.modulate.a + 0.01
+		$qte8.modulate.a = $qte8.modulate.a + opacidad
 		if qte7_com == false:
 			$qte8.visible = true
 				
 	if $qte10.visible == false and $qte9.modulate.a < 1 and ($qte8.modulate.a > 1 or qte8_com == true):
-		$qte9.modulate.a = $qte9.modulate.a + 0.01
+		$qte9.modulate.a = $qte9.modulate.a + opacidad
 		if qte8_com == false:
 			$qte9.visible = true
 				
-	if $qte9.modulate.a > 1 or qte9_com == true:
-		$qte10.modulate.a = $qte10.modulate.a + 0.01
-		$qte10.visible = true
+	if $qte10.modulate.a < 1 and ($qte9.modulate.a > 1 or qte9_com == true):
+		$qte10.modulate.a = $qte10.modulate.a + opacidad
+		if qte9_com == false:
+			$qte10.visible = true
 		
 func _on_qte_1_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and secuen_act == 1: 
