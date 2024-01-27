@@ -17,10 +17,11 @@ var textura4 = load("res://Assets/Images/flecha_down.jpg")
 # Called when the node enters the scene tree for the first time.
 func initChisteQTE():
 	Global.chisteQTEon = true
+	$Bocadillo.visible = 1
 	start()
 
 func start():
-	
+
 	if !Global.chisteQTEon:
 		return
 	$Timer.wait_time = tiempo_max
@@ -44,6 +45,10 @@ func _process(delta):
 	
 	
 func _input(event):
+	
+	var direction = Input.get_axis("ui_left", "ui_right")
+	changeDir(direction)
+	
 	if !Global.chisteQTEon:
 		return
 	
@@ -96,19 +101,32 @@ func _input(event):
 		fin_baile(exito)
 		
 func fin_baile(qte_result):
-	if secuenTemp > 0:
+	if secuenTemp > 0 && qte_result:
 		return
 	Global.chiste_result = qte_result
 	
 	if qte_result == true:
 		print("EXITO")
+		$Applause.play()
 	else:
 		print("FALLO")
+		$Boo.play()
 		
 	secuenTemp = secuen_max
+	$Bocadillo.visible = 0
+	$qte_icon.texture = null
 	Global.chisteQTEon = false
 	
-	
+
+func changeDir(direction):
+	if direction < 0:
+		$Bocadillo.flip_h = 1
+		$Bocadillo.position.x = -60
+		$qte_icon.position.x = -120
+	if direction > 0:
+		$Bocadillo.flip_h = 0
+		$Bocadillo.position.x = 60
+		$qte_icon.position.x = 0
 
 func _on_timer_timeout():
 	print("TIMEOUT")

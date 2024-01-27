@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgc1uk8g5qwls"]
+[gd_scene load_steps=24 format=3 uid="uid://dgc1uk8g5qwls"]
 
 [ext_resource type="Script" path="res://Scripts/chiquito.gd" id="1_jys0f"]
 [ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="2_h2bjc"]
@@ -12,6 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://bowr8toaal4b0" path="res://Assets/Sonidos/te_habla_un_hombre_malo_de_la_pradera.mp3" id="10_vhtnl"]
 [ext_resource type="AudioStream" uid="uid://qsrpsu8pc1sj" path="res://Assets/Sonidos/e_cannn_ecan_de_mor_demor_ecan.mp3" id="11_yvxeh"]
 [ext_resource type="Script" path="res://Scenes/Main/chisteQTE.gd" id="12_565q1"]
+[ext_resource type="AudioStream" uid="uid://cxqb3l7h46ke6" path="res://Assets/Sonidos/short-crowd-cheer-6713.mp3" id="13_11s6j"]
+[ext_resource type="AudioStream" uid="uid://csrxb5b35ceq5" path="res://Assets/Sonidos/boo-6377.mp3" id="14_x5agm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p104d"]
 atlas = ExtResource("2_h2bjc")
@@ -139,8 +141,20 @@ script = ExtResource("12_565q1")
 
 [node name="Timer" type="Timer" parent="QTE"]
 
+[node name="Bocadillo" type="Sprite2D" parent="QTE"]
+visible = false
+position = Vector2(67, -208)
+scale = Vector2(0.669158, 0.649006)
+texture = ExtResource("3_ligok")
+
 [node name="qte_icon" type="Sprite2D" parent="QTE"]
-position = Vector2(-58, -261)
+position = Vector2(0, -295)
 scale = Vector2(0.3, 0.3)
 centered = false
 offset = Vector2(40, 0)
+
+[node name="Applause" type="AudioStreamPlayer" parent="QTE"]
+stream = ExtResource("13_11s6j")
+
+[node name="Boo" type="AudioStreamPlayer" parent="QTE"]
+stream = ExtResource("14_x5agm")

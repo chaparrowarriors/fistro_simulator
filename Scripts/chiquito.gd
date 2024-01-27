@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-
-const speedMax = 300.0
-var speed = 0
+var speed = 300.0
 const JUMP_VELOCITY = -200.0
 var chisteOn = false
 
@@ -18,13 +16,6 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if chisteOn: 
-		return
-		
-	if Global.chisteQTEon:
-		speed = 0
-	else:
-		speed = speedMax
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -41,15 +32,20 @@ func _physics_process(delta):
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+		
+		
+	if chisteOn || Global.chisteQTEon: 
+		velocity.x = 0
 
 	move_and_slide()
 
 func showChiste(chiste):
-	if chisteOn:
+	if chisteOn || Global.chisteQTEon:
 		return
 	chiste -= 1
+	Global.chiste_type = chiste
 	initChiste(chiste)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	endChiste(chiste)
 
 func initChiste(chiste):
@@ -60,9 +56,8 @@ func initChiste(chiste):
 	get_node(audioChistes[chiste]).play()
 
 func endChiste(chiste):
-	print(chiste)
-	$Bocadillo.visible = 0
 	get_node(iconos[chiste]).visible = 0
+	$Bocadillo.visible = 0
 	$AnimatedSprite2D.play('default')
 	chisteOn = false
 	$QTE.initChisteQTE()
