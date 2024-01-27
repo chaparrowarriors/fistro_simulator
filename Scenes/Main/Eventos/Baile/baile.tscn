@@ -10,12 +10,93 @@ script = ExtResource("1_67drc")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="qte" type="RigidBody2D" parent="."]
+[node name="qte1" type="RigidBody2D" parent="."]
 
-[node name="qte_icon" type="Sprite2D" parent="qte"]
+[node name="qte_icon" type="Sprite2D" parent="qte1"]
 position = Vector2(600, 200)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="qte"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte1"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte2" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte2"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte2"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte3" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte3"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte3"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte4" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte4"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte4"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte5" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte5"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte5"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte6" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte6"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte6"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte7" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte7"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte7"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte8" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte8"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte8"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte9" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte9"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte9"]
+position = Vector2(163, 71)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte10" type="RigidBody2D" parent="."]
+
+[node name="qte_icon" type="Sprite2D" parent="qte10"]
+position = Vector2(600, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="qte10"]
 position = Vector2(163, 71)
 shape = SubResource("CircleShape2D_7d67s")
 

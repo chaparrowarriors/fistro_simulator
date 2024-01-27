@@ -6,13 +6,15 @@ var tiempo_max = 5.0 # Segundos máximos para realizar la secuencia.
 func _ready():
 	$Timer.wait_time = tiempo_max
 	$Timer.start()
+	inicializar_baile()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
 	pass
 
 func inicializar_baile():
-	pass
+	for n in range(1,secuen_max+1):
+		return
 
 func fin_baile(qte_result):
 	Global.baile_result = qte_result
