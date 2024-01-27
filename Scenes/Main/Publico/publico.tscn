@@ -12,8 +12,6 @@ script = ExtResource("1_e65hb")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="base" type="Sprite2D" parent="."]
 scale = Vector2(10, 10)
 texture = ExtResource("2_jm5mc")
