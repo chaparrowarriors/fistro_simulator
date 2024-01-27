@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0w04lq20jisp"]
+
+[ext_resource type="Texture2D" uid="uid://bo0bp5cdd461g" path="res://Assets/Images/logo trans.png" id="1_1ldhr"]
+[ext_resource type="AudioStream" uid="uid://1u4bc7lgwvng" path="res://Assets/Sonidos/chaparrowarriors.mp3" id="1_44rpq"]
+[ext_resource type="Script" path="res://Scenes/Extras/chaparro.gd" id="1_vw3or"]
+[ext_resource type="Texture2D" uid="uid://fi2f2myglv6k" path="res://Assets/Images/logo fondo.png" id="4_7bj04"]
+
+[node name="Chaparro" type="Sprite2D"]
+position = Vector2(638, 364)
+texture = ExtResource("4_7bj04")
+script = ExtResource("1_vw3or")
+
+[node name="chaparro_sonido" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_44rpq")
+
+[node name="logo trans" type="Sprite2D" parent="."]
+position = Vector2(7, -13)
+texture = ExtResource("1_1ldhr")
