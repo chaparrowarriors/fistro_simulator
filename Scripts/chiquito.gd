@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const speedMax = 300.0
+var speed = 0
 const JUMP_VELOCITY = -200.0
 var chisteOn = false
 
@@ -19,6 +20,11 @@ func _physics_process(delta):
 	
 	if chisteOn: 
 		return
+		
+	if Global.chisteQTEon:
+		speed = 0
+	else:
+		speed = speedMax
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -32,9 +38,9 @@ func _physics_process(delta):
 	changeDir(direction)
 		
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
 
@@ -59,6 +65,7 @@ func endChiste(chiste):
 	get_node(iconos[chiste]).visible = 0
 	$AnimatedSprite2D.play('default')
 	chisteOn = false
+	$QTE.initChisteQTE()
 
 func changeDir(direction):
 	if direction < 0:
