@@ -1,9 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dgc1uk8g5qwls"]
 
-[ext_resource type="Script" path="res://Scenes/chiquito.gd" id="1_jys0f"]
+[ext_resource type="Script" path="res://Scripts/chiquito.gd" id="1_jys0f"]
 [ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="2_h2bjc"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufj73"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4nch"]
 atlas = ExtResource("2_h2bjc")
@@ -41,16 +39,20 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufj73"]
+radius = 13.5
+height = 41.3333
+
 [node name="Chiquito" type="CharacterBody2D"]
 position = Vector2(500, 500)
 script = ExtResource("1_jys0f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_d6c7e")
+frame_progress = 0.234673
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 0)
 scale = Vector2(6, 6)
 shape = SubResource("CapsuleShape2D_ufj73")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_d6c7e")
-frame_progress = 0.234673
