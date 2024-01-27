@@ -10,7 +10,11 @@
 [node name="Publico" type="Node2D"]
 script = ExtResource("1_e65hb")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="timerAnimo" type="Timer" parent="."]
+
+[node name="timerPeticiones" type="Timer" parent="."]
+
+[node name="timerNextPetcion" type="Timer" parent="."]
 
 [node name="base" type="Sprite2D" parent="."]
 scale = Vector2(10, 10)
@@ -37,4 +41,6 @@ position = Vector2(-15.8572, -54.3673)
 scale = Vector2(22.9362, 22.9362)
 texture = ExtResource("6_ytqtf")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timerAnimo" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timerPeticiones" to="." method="_on_timer_peticiones_timeout"]
+[connection signal="timeout" from="timerNextPetcion" to="." method="_on_timer_next_petcion_timeout"]

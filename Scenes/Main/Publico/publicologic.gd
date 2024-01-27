@@ -16,10 +16,10 @@ var change_opacidad = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().create_timer(2).timeout
-	var randtime = randi_range(1, 5)
+	var randtime = randf_range(1, 5)
 	#print(randtime)
 	await get_tree().create_timer(randtime).timeout
-	$Timer.start()
+	$timerAnimo.start()
 	peticion()
 	
 
@@ -28,8 +28,12 @@ func _ready():
 func _process(delta):
 	if change_opacidad:
 		opacidad()
+	pauseTimer(Global.pause)
 
-
+func pauseTimer(pause):
+	$timerPeticiones.paused = pause
+	$timerAnimo.paused = pause
+	$timerNextPetcion.paused = pause
 func animo_bar():
 	animo -= descenso
 	if animo >= 75:
@@ -45,7 +49,7 @@ func _on_timer_timeout():
 	animo_bar()
 	tiempo += 1
 	#print(animo, "-", tiempo)
-	$Timer.start()
+	$timerAnimo.start()
 
 func peticion():
 	randpeti = randi_range(0,3)
@@ -53,19 +57,17 @@ func peticion():
 	$peticionglobo/peticionicono.texture = load(peticiones_icon[randpeti])
 	$peticionglobo.visible = true
 	#print(randpeti)
-	randtime_wait = randi_range(peticiones_randtime_wait[0], peticiones_randtime_wait[1])
+	randtime_wait = randf_range(peticiones_randtime_wait[0], peticiones_randtime_wait[1])
 	change_opacidad = true
-	await get_tree().create_timer(randtime_wait).timeout
-	change_opacidad = false
-	$peticionglobo/peticionicono.modulate.a = 1
-	peticion_actual = null
-	$peticionglobo.visible = false
-	peticion_next()
+	$timerPeticiones.wait_time = randtime_wait
+	$timerPeticiones.start()
+	#await get_tree().create_timer(randtime_wait).timeout
 	
 func peticion_next():
 	var randtime_next = randi_range(peticiones_randtime_next[0], peticiones_randtime_wait[1])
-	await get_tree().create_timer(randtime_next).timeout
-	peticion()
+	#await get_tree().create_timer(randtime_next).timeout
+	$timerNextPetcion.wait_time = randtime_next
+	$timerNextPetcion.start()
 
 func opacidad():
 	$peticionglobo/peticionicono.modulate.a -= 0.0005
@@ -76,16 +78,28 @@ func recibir_chiste():
 	print(Global.chiste_result)
 	if Global.chiste_type == peticion_actual and Global.chiste_result == true:
 		animo += peticiones_valor[randpeti]
-		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/correct.png")
+		$peticionglobo/peticionresult.texture = load("res://Assets/Images/correct.png")
 	if Global.chiste_type != peticion_actual and Global.chiste_result == false:
 		animo -= peticiones_valor[randpeti]
-		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/fallo.png")
+		$peticionglobo/peticionresult.texture = load("res://Assets/Images/fallo.png")
 	if Global.chiste_type != peticion_actual and Global.chiste_result == true:
-		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/neutral.png")
+		$peticionglobo/peticionresult.texture = load("res://Assets/Images/neutral.png")
 	if Global.chiste_type == peticion_actual and Global.chiste_result == false:
-		$peticionglobo/peticionicono/peticionresult.texture = load("res://Assets/Images/neutral.png")
+		$peticionglobo/peticionresult.texture = load("res://Assets/Images/neutral.png")
 	
-	$peticionglobo/peticionicono/peticionresult.visible = true
+	$peticionglobo/peticionresult.visible = true
 	await get_tree().create_timer(1).timeout
-	$peticionglobo/peticionicono/peticionresult.visible = false
+	$peticionglobo/peticionresult.visible = false
 	$peticionglobo.visible = false
+
+
+func _on_timer_peticiones_timeout():
+	change_opacidad = false
+	$peticionglobo.visible = false
+	$peticionglobo/peticionicono.modulate.a = 1
+	peticion_actual = null
+	peticion_next()
+
+
+func _on_timer_next_petcion_timeout():
+	peticion()
