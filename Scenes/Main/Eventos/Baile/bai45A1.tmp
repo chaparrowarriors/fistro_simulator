@@ -37,8 +37,9 @@ texture = ExtResource("2_7tj2x")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte2" type="Area2D" parent="."]
+[node name="qte2" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte2"]
 scale = Vector2(0.15, 0.15)
@@ -52,8 +53,9 @@ texture = ExtResource("4_fyjei")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte3" type="Area2D" parent="."]
+[node name="qte3" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte3"]
 scale = Vector2(0.15, 0.15)
@@ -67,8 +69,9 @@ texture = ExtResource("4_tyfbj")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte4" type="Area2D" parent="."]
+[node name="qte4" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte4"]
 scale = Vector2(0.15, 0.15)
@@ -82,8 +85,9 @@ texture = ExtResource("4_iv32v")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte5" type="Area2D" parent="."]
+[node name="qte5" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte5"]
 scale = Vector2(0.15, 0.15)
@@ -97,8 +101,9 @@ texture = ExtResource("4_wst6t")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte6" type="Area2D" parent="."]
+[node name="qte6" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte6"]
 scale = Vector2(0.15, 0.15)
@@ -112,8 +117,9 @@ texture = ExtResource("4_xkjdq")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte7" type="Area2D" parent="."]
+[node name="qte7" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte7"]
 scale = Vector2(0.15, 0.15)
@@ -127,8 +133,9 @@ texture = ExtResource("4_3bn4l")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte8" type="Area2D" parent="."]
+[node name="qte8" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte8"]
 scale = Vector2(0.15, 0.15)
@@ -142,8 +149,9 @@ texture = ExtResource("4_115i1")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte9" type="Area2D" parent="."]
+[node name="qte9" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte9"]
 scale = Vector2(0.15, 0.15)
@@ -157,8 +165,9 @@ texture = ExtResource("4_un3rf")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
-[node name="qte10" type="Area2D" parent="."]
+[node name="qte10" type="RigidBody2D" parent="."]
 visible = false
+gravity_scale = 0.0
 
 [node name="circulo" type="Sprite2D" parent="qte10"]
 scale = Vector2(0.15, 0.15)
@@ -174,12 +183,3 @@ shape = SubResource("CircleShape2D_7d67s")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="input_event" from="qte1" to="." method="_on_qte_1_input_event"]
-[connection signal="input_event" from="qte2" to="." method="_on_qte_2_input_event"]
-[connection signal="input_event" from="qte3" to="." method="_on_qte_3_input_event"]
-[connection signal="input_event" from="qte4" to="." method="_on_qte_4_input_event"]
-[connection signal="input_event" from="qte5" to="." method="_on_qte_5_input_event"]
-[connection signal="input_event" from="qte6" to="." method="_on_qte_6_input_event"]
-[connection signal="input_event" from="qte7" to="." method="_on_qte_7_input_event"]
-[connection signal="input_event" from="qte8" to="." method="_on_qte_8_input_event"]
-[connection signal="input_event" from="qte9" to="." method="_on_qte_9_input_event"]
-[connection signal="input_event" from="qte10" to="." method="_on_qte_10_input_event"]
