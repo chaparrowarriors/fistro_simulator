@@ -41,13 +41,13 @@ func pauseTimer(pause):
 func animo_bar():
 	animo -= descenso
 	if animo >= 75:
-		$expresion.play('happy')
+		$expresion.texture = load("res://Assets/Images/publicoexpress1.png")
 	elif animo >= 50:
-		$expresion.play('normal')
+		$expresion.texture = load("res://Assets/Images/publicoexpress2.png")
 	elif animo >= 25:
-		$expresion.play('sad')
+		$expresion.texture = load("res://Assets/Images/publicoexpress3.png")
 	else:
-		$expresion.play('angry')
+		$expresion.texture = load("res://Assets/Images/publicoexpress3.png")
 
 func _on_timer_timeout():
 	animo_bar()
