@@ -30,8 +30,13 @@ func _process(delta):
 	if int(mins) >= 1:
 		puntuacion()
 	checkAnimo()
+	pauseTimer(Global.pause)
 	pass
 	
+func pauseTimer(pause):
+	$TimerFinFoco.paused = pause
+	$TimerFoco.paused = pause
+
 func checkBaile():
 	if baileOn:
 		return
@@ -131,4 +136,6 @@ func puntuacion():
 	get_tree().change_scene_to_file("res://Scenes/Menu/Puntuacion.tscn")
 
 func pausa():
+	print(Global.pause)
 	Global.pause = !Global.pause
+	print(Global.pause)

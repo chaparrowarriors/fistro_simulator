@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dl0vqjwa7e8qc"]
+[gd_scene load_steps=46 format=3 uid="uid://buop4dlyehu4k"]
 
 [ext_resource type="Script" path="res://Scripts/stage.gd" id="1_skm1k"]
 [ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="2_b0lgo"]
@@ -13,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://d2h8ft8vg76xc" path="res://Assets/Images/hombre2.png" id="11_cw88p"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="12_17733"]
 [ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="13_jru0y"]
-[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="14_nmelb"]
-[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="15_uxi0r"]
+[ext_resource type="Texture2D" uid="uid://cbwg3ggctm8sr" path="res://Assets/Images/foco.png" id="14_nmelb"]
+[ext_resource type="PackedScene" path="res://Scenes/Main/Chiquito.tscn" id="15_uxi0r"]
 [ext_resource type="Texture2D" uid="uid://bgsntclrarwpl" path="res://Assets/Images/reloj.png" id="16_yy5or"]
-[ext_resource type="Theme" uid="uid://c3h1lirkrq0n1" path="res://temaReloj.tres" id="17_wr5ka"]
+[ext_resource type="Theme" uid="uid://ddn2jjr8xmws7" path="res://temaReloj.tres" id="17_wr5ka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 82.25)
