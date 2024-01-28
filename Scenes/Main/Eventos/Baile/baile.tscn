@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6hdhbk4rh3p4"]
+[gd_scene load_steps=16 format=3 uid="uid://6hdhbk4rh3p4"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Eventos/Baile/baile.gd" id="1_67drc"]
 [ext_resource type="Texture2D" uid="uid://bpobteenvkjn7" path="res://Assets/Images/1.png" id="2_7tj2x"]

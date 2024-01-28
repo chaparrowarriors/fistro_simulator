@@ -37,6 +37,7 @@ func pauseTimer(pause):
 	$timerPeticiones.paused = pause
 	$timerAnimo.paused = pause
 	$timerNextPetcion.paused = pause
+	
 func animo_bar():
 	animo -= descenso
 	if animo >= 75:
@@ -51,7 +52,7 @@ func animo_bar():
 func _on_timer_timeout():
 	animo_bar()
 	tiempo += 1
-	#print(animo, "-", tiempo)
+	print(tiempo)
 	$timerAnimo.start()
 
 func peticion():
@@ -75,6 +76,7 @@ func peticion_next():
 	print(randtime_next)
 	$timerNextPetcion.wait_time = randtime_next
 	$timerNextPetcion.start()
+	print("Start next pet")
 
 func opacidad():
 	$peticionglobo/peticionicono.modulate.a -= 0.0005
