@@ -11,7 +11,7 @@ var peticion_actual
 var tiempo = 0
 var randtime_wait = 0
 var randtime_next = 0
-var randpeti
+var randpeti = 0
 var change_opacidad = false
 
 # Called when the node enters the scene tree for the first time.

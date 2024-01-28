@@ -9,10 +9,10 @@ var random_max = 4 # Variable aleatoria del máximo de opciones disponibles.
 var input # Valor del input esperado
 
 #Textruas
-var textura1 = load("res://Assets/Images/flecha_der.jpg")
-var textura2 = load("res://Assets/Images/flecha_izq.jpg")
-var textura3 = load("res://Assets/Images/flecha_up.jpg")
-var textura4 = load("res://Assets/Images/flecha_down.jpg")
+var textura1 = load("res://Assets/Images/flecha_der.png")
+var textura2 = load("res://Assets/Images/flecha_izq.png")
+var textura3 = load("res://Assets/Images/flecha_arr.png")
+var textura4 = load("res://Assets/Images/flecha_abj.png")
 
 # Called when the node enters the scene tree for the first time.
 func initChisteQTE():
@@ -123,11 +123,11 @@ func changeDir(direction):
 	if direction < 0:
 		$Bocadillo.flip_h = 1
 		$Bocadillo.position.x = -60
-		$qte_icon.position.x = -120
+		$qte_icon.position.x = -130
 	if direction > 0:
 		$Bocadillo.flip_h = 0
 		$Bocadillo.position.x = 60
-		$qte_icon.position.x = 0
+		$qte_icon.position.x = -10
 
 func _on_timer_timeout():
 	print("TIMEOUT")

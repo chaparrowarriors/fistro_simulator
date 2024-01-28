@@ -186,7 +186,7 @@ scale = Vector2(0.669158, 0.649006)
 texture = ExtResource("3_ligok")
 
 [node name="qte_icon" type="Sprite2D" parent="QTE"]
-position = Vector2(0, -295)
+position = Vector2(-10, -315)
 scale = Vector2(0.3, 0.3)
 centered = false
 offset = Vector2(40, 0)
