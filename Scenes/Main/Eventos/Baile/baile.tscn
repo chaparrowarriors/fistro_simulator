@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://p0jr4ivpqbii" path="res://Assets/Images/9.png" id="4_un3rf"]
 [ext_resource type="Texture2D" uid="uid://dumbqiu51q8s0" path="res://Assets/Images/5.png" id="4_wst6t"]
 [ext_resource type="Texture2D" uid="uid://kxcmrai877q4" path="res://Assets/Images/6.png" id="4_xkjdq"]
+[ext_resource type="AudioStream" uid="uid://dnmxwev3ao8r1" path="res://Assets/Sonidos/chiste_HOMBRE_HONRRAO.mp3" id="13_udxkd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7ga5"]
 size = Vector2(1930, 1095)
@@ -182,6 +183,9 @@ texture = ExtResource("4_atior")
 [node name="qte10_coli" type="CollisionShape2D" parent="qte10"]
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
+
+[node name="Honrrao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_udxkd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerFallo" to="." method="_on_timer_fallo_timeout"]

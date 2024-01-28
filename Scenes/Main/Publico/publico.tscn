@@ -16,7 +16,7 @@ script = ExtResource("1_e65hb")
 
 [node name="peticionglobo" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(60, -136)
+position = Vector2(60, -200)
 scale = Vector2(0.441441, 0.441441)
 texture = ExtResource("4_1h0py")
 
