@@ -11,6 +11,8 @@ var reloj = 0
 func _ready():
 	pausa()
 	
+	primeraPeticion()
+	
 	$TimerFoco.wait_time = tiempo_foco
 	$TimerFoco.start()
 	$TimerFinFoco.wait_time = tiempo_vida_foco
@@ -86,7 +88,7 @@ func recibirChiste():
 		else:
 			print("Entra5")
 			$Publico3.recibir_chiste()
-	
+
 func actuarFoco():
 	var foco = randi_range(1,3)
 	match foco:
@@ -138,6 +140,24 @@ func puntuacion():
 	print(Global.puntuacionFinal)
 	get_tree().change_scene_to_file("res://Scenes/Menu/Puntuacion.tscn")
 
+func primeraPeticion():
+	var randIni = randi_range(2,12)
+	var randAum = randi_range(3,5)
+	
+	$Publico1.startPublico(randIni)
+	randIni += randAum
+	
+	$Publico2.startPublico(randIni)
+	randIni += randAum
+	
+	$Publico3.startPublico(randIni)
+	randIni += randAum
+	
+	$Publico4.startPublico(randIni)
+	randIni += randAum
+	
+	$Publico5.startPublico(randIni)
+	
 func pausa():
 	#print(Global.pause)
 	Global.pause = !Global.pause

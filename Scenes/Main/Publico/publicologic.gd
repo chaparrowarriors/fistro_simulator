@@ -15,8 +15,9 @@ var randpeti = 0
 var change_opacidad = false
 
 
-func startPublico():
-	pass
+func startPublico(num):
+	$timerStart.wait_time = num
+	$timerStart.start()
 	
 	
 # Called when the node enters the scene tree for the first time.
@@ -27,10 +28,10 @@ func _ready():
 	#await get_tree().create_timer(randtime).timeout
 	#$timerAnimo.start()
 	#peticion()
-	var randtime = randi_range(2, 12)
-	$timerStart.wait_time = randtime
-	$timerStart.start()
-	
+	#var randtime = randi_range(2, 17)
+	#$timerStart.wait_time = randtime
+	#$timerStart.start()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -89,6 +90,7 @@ func peticion_next():
 
 func opacidad():
 	if not Global.pause:
+		$peticionglobo.modulate.a -= 0.0005
 		$peticionglobo/peticionicono.modulate.a -= 0.0005
 	
 func recibir_chiste():
