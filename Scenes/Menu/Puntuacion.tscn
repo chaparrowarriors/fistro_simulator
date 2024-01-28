@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7w0tho4g7f4i"]
+[gd_scene load_steps=14 format=3 uid="uid://b7w0tho4g7f4i"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/Puntuacion.gd" id="1_7v7iv"]
 [ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="1_lgb58"]
@@ -7,23 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bi3gy0d7tx34x" path="res://Assets/Images/applause.png" id="4_uqf4l"]
 [ext_resource type="Theme" uid="uid://x3muhlvxsd7e" path="res://Assets/Temas/menus_theme.tres" id="5_rqisv"]
 [ext_resource type="FontFile" uid="uid://blkwh2jsvx3d0" path="res://Assets/Fuentes/Slackey.ttf" id="6_qmct3"]
-[ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="8_bn6lk"]
 [ext_resource type="Texture2D" uid="uid://bn6dq5ixjw1q3" path="res://Assets/Images/bocadillo2.png" id="8_pvclo"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mrbhd"]
-atlas = ExtResource("8_bn6lk")
-region = Rect2(0, 0, 428, 523)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ccaiw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mrbhd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://cos6ip45nrl48" path="res://Assets/Images/CARA1.png" id="9_kel7p"]
+[ext_resource type="Texture2D" uid="uid://l1g2d7s52k5w" path="res://Assets/Images/CARA5.png" id="9_m0tmy"]
+[ext_resource type="Texture2D" uid="uid://b0q5hh1b8wuph" path="res://Assets/Images/CARA4.png" id="10_br0jj"]
+[ext_resource type="Texture2D" uid="uid://cduhbj17lmlm2" path="res://Assets/Images/CARA3.png" id="11_ua7dc"]
+[ext_resource type="Texture2D" uid="uid://bwgk2wv3nnkpv" path="res://Assets/Images/CARA2.png" id="12_v1wil"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -35,6 +24,7 @@ grow_vertical = 2
 script = ExtResource("1_7v7iv")
 
 [node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1937.0
 offset_bottom = 1138.0
 texture = ExtResource("1_lgb58")
@@ -46,21 +36,25 @@ scale = Vector2(2.21847, 2.02962)
 texture = ExtResource("2_t3tp8")
 
 [node name="Escenario" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1937.0
 offset_bottom = 1138.0
 texture = ExtResource("3_7n86s")
 
 [node name="Applause1" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(390, 425)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_uqf4l")
 
 [node name="Applause2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(688, 425)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_uqf4l")
 
 [node name="Applause3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
 position = Vector2(984, 425)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_uqf4l")
@@ -121,7 +115,7 @@ offset_bottom = 963.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("6_qmct3")
 theme_override_font_sizes/normal_font_size = 45
-text = " A guan, e peich, agromenaguer . Que vamos a llamar a la Meretérita! Bien, cobarde!"
+text = "Fistro pecador! No te digo trigo por no llamarte Roddrigo! Se podría haber hecho un un una miiigita meJorrr!"
 drag_and_drop_selection_enabled = false
 
 [node name="tres" type="RichTextLabel" parent="."]
@@ -163,10 +157,6 @@ theme_override_font_sizes/normal_font_size = 45
 text = "Eres más peligroso que un tiroteo en un ascensor. Ohhh.. ! que arte tienes ...! siete caballos vienen de bonansaaa ... ... .ole, ole, ole ..."
 drag_and_drop_selection_enabled = false
 
-[node name="Chiquito" type="AnimatedSprite2D" parent="."]
-position = Vector2(460, 824)
-sprite_frames = SubResource("SpriteFrames_ccaiw")
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1481.0
@@ -180,5 +170,35 @@ theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("6_qmct3")
 theme_override_font_sizes/font_size = 55
 text = "Volveh"
+
+[node name="cara1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(454, 796)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9_m0tmy")
+
+[node name="cara2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(454, 796)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("10_br0jj")
+
+[node name="cara3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(454, 796)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("11_ua7dc")
+
+[node name="cara4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(454, 796)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("12_v1wil")
+
+[node name="cara5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(454, 796)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9_kel7p")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

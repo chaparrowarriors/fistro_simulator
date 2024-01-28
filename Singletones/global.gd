@@ -5,5 +5,5 @@ var baile_result
 var chisteQTEon = false
 var zonaChiquito = 0.5
 var pause = false
-var puntuacionFinal = 250
+var puntuacionFinal = 150
 
