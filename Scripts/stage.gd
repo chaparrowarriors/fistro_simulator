@@ -9,6 +9,8 @@ var reloj = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pausa()
+	
 	$TimerFoco.wait_time = tiempo_foco
 	$TimerFoco.start()
 	$TimerFinFoco.wait_time = tiempo_vida_foco
@@ -67,22 +69,23 @@ func _input(event):
 	Global.zonaChiquito = $Chiquito.position.x / 1920
 
 func recibirChiste():
-	if Global.zonaChiquito < 0.20:
-		print("Entra1")
-		print($Publico1.get("animo"))
-		$Publico1.recibir_chiste()
-	elif Global.zonaChiquito < 0.40:
-		print("Entra2")
-		$Publico4.recibir_chiste()
-	elif Global.zonaChiquito < 0.60:
-		print("Entra3")
-		$Publico2.recibir_chiste()
-	elif Global.zonaChiquito < 0.80:
-		print("Entra4")
-		$Publico5.recibir_chiste()
-	else:
-		print("Entra5")
-		$Publico3.recibir_chiste()
+	if not Global.pause:
+		if Global.zonaChiquito < 0.20:
+			print("Entra1")
+			print($Publico1.get("animo"))
+			$Publico1.recibir_chiste()
+		elif Global.zonaChiquito < 0.40:
+			print("Entra2")
+			$Publico4.recibir_chiste()
+		elif Global.zonaChiquito < 0.60:
+			print("Entra3")
+			$Publico2.recibir_chiste()
+		elif Global.zonaChiquito < 0.80:
+			print("Entra4")
+			$Publico5.recibir_chiste()
+		else:
+			print("Entra5")
+			$Publico3.recibir_chiste()
 	
 func actuarFoco():
 	var foco = randi_range(1,3)
@@ -136,6 +139,12 @@ func puntuacion():
 	get_tree().change_scene_to_file("res://Scenes/Menu/Puntuacion.tscn")
 
 func pausa():
-	print(Global.pause)
+	#print(Global.pause)
 	Global.pause = !Global.pause
-	print(Global.pause)
+	#print(Global.pause)
+	if Global.pause:
+		$Oscuridad.modulate.a = 0.75
+		$tutorial.visible = true
+	else:
+		$Oscuridad.modulate.a = 0
+		$tutorial.visible = false

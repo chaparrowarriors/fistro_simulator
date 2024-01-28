@@ -11,8 +11,8 @@
 [ext_resource type="Script" path="res://Scenes/Main/chiquitoMenu.gd" id="11_y8fmf"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="12_17733"]
 [ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="13_jru0y"]
-[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="14_nmelb"]
-[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="15_uxi0r"]
+[ext_resource type="Texture2D" uid="uid://cbwg3ggctm8sr" path="res://Assets/Images/foco.png" id="14_nmelb"]
+[ext_resource type="PackedScene" path="res://Scenes/Main/Chiquito.tscn" id="15_uxi0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 82.25)
