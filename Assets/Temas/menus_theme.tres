@@ -5,4 +5,5 @@
 
 [resource]
 default_font = ExtResource("2_lqj8m")
+Button/font_sizes/font_size = 27
 Label/fonts/font = ExtResource("1_t8ok1")
