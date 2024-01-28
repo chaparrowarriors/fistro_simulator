@@ -17,6 +17,9 @@ one_shot = true
 [node name="timerNextPetcion" type="Timer" parent="."]
 one_shot = true
 
+[node name="timerStart" type="Timer" parent="."]
+one_shot = true
+
 [node name="peticionglobo" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(60, -200)
@@ -37,3 +40,4 @@ texture = ExtResource("4_guixe")
 [connection signal="timeout" from="timerAnimo" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="timerPeticiones" to="." method="_on_timer_peticiones_timeout"]
 [connection signal="timeout" from="timerNextPetcion" to="." method="_on_timer_next_petcion_timeout"]
+[connection signal="timeout" from="timerStart" to="." method="_on_timer_start_timeout"]

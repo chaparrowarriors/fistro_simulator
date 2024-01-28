@@ -14,14 +14,22 @@ var randtime_next = 0
 var randpeti = 0
 var change_opacidad = false
 
+
+func startPublico():
+	var randtime = randi_range(2, 12)
+	$timerStart.wait_time = randtime
+	$timerStart.start()
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().create_timer(2).timeout
-	var randtime = randi_range(1, 10)
-	#print(randtime)
-	await get_tree().create_timer(randtime).timeout
-	$timerAnimo.start()
-	peticion()
+	#await get_tree().create_timer(2).timeout
+	#var randtime = randi_range(1, 10)
+	##print(randtime)
+	#await get_tree().create_timer(randtime).timeout
+	#$timerAnimo.start()
+	#peticion()
+	pass
 	
 
 
@@ -37,6 +45,7 @@ func pauseTimer(pause):
 	$timerPeticiones.paused = pause
 	$timerAnimo.paused = pause
 	$timerNextPetcion.paused = pause
+	$timerStart.paused = pause
 	
 func animo_bar():
 	animo -= descenso
@@ -116,4 +125,9 @@ func _on_timer_peticiones_timeout():
 
 func _on_timer_next_petcion_timeout():
 	#print("final timer next")
+	peticion()
+
+
+func _on_timer_start_timeout():
+	$timerAnimo.start()
 	peticion()
