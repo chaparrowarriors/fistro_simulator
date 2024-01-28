@@ -16,9 +16,7 @@ var change_opacidad = false
 
 
 func startPublico():
-	var randtime = randi_range(2, 12)
-	$timerStart.wait_time = randtime
-	$timerStart.start()
+	pass
 	
 	
 # Called when the node enters the scene tree for the first time.
@@ -29,7 +27,9 @@ func _ready():
 	#await get_tree().create_timer(randtime).timeout
 	#$timerAnimo.start()
 	#peticion()
-	pass
+	var randtime = randi_range(2, 12)
+	$timerStart.wait_time = randtime
+	$timerStart.start()
 	
 
 
