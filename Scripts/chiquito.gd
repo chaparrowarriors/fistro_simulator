@@ -62,6 +62,10 @@ func endChiste(chiste):
 	chisteOn = false
 	$QTE.initChisteQTE()
 
+func initBaile():
+	$Bocadillo.visible = 0
+	$AnimatedSprite2D.play('baile')
+	
 func changeDir(direction):
 	if direction < 0:
 		$AnimatedSprite2D.flip_h = 1

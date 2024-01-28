@@ -2,13 +2,15 @@ extends Node2D
 
 signal contarChiste
 
-var tiempo_foco = 30.0
+var tiempo_foco = 20.0
+var tiempo_vida_foco = 4.0
 var baileOn = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TimerFoco.wait_time = tiempo_foco
 	$TimerFoco.start()
-	pass # Replace with function body.
+	
+	$TimerFinFoco.wait_time = tiempo_vida_foco
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,10 +69,15 @@ func actuarFoco():
 			$Foco2.visible = true
 		3:
 			$Foco3.visible = true
+			
+	$TimerFinFoco.start()
 
-func actuarBaile():		
+func actuarBaile():
+	$TimerFinFoco.stop()
 	$Oscuridad.modulate.a = 0.75
 	baileOn = true
+	
+	$Chiquito.initBaile()
 	
 	var path = "res://Scenes/Main/Eventos/Baile/baile.tscn"
 	var escenaBaile = load(path)
@@ -79,3 +86,9 @@ func actuarBaile():
 
 func _on_timer_foco_timeout():
 	actuarFoco()
+
+
+func _on_timer_fin_foco_timeout():
+	$Foco1.visible = false
+	$Foco2.visible = false
+	$Foco3.visible = false

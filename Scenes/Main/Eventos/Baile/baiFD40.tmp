@@ -1,0 +1,198 @@
+[gd_scene load_steps=15 format=3 uid="uid://6hdhbk4rh3p4"]
+
+[ext_resource type="Script" path="res://Scenes/Main/Eventos/Baile/baile.gd" id="1_67drc"]
+[ext_resource type="Texture2D" uid="uid://bpobteenvkjn7" path="res://Assets/Images/1.png" id="2_7tj2x"]
+[ext_resource type="Texture2D" uid="uid://bnhk3641hjoou" path="res://Assets/Images/circulo.png" id="2_x23hr"]
+[ext_resource type="Texture2D" uid="uid://b6r5j2h61p24n" path="res://Assets/Images/7.png" id="4_3bn4l"]
+[ext_resource type="Texture2D" uid="uid://dkwckngmw1jcm" path="res://Assets/Images/8.png" id="4_115i1"]
+[ext_resource type="Texture2D" uid="uid://cblhx0030ndbp" path="res://Assets/Images/10.png" id="4_atior"]
+[ext_resource type="Texture2D" uid="uid://b64mea88nvu1b" path="res://Assets/Images/2.png" id="4_fyjei"]
+[ext_resource type="Texture2D" uid="uid://d1qhme6lvtsro" path="res://Assets/Images/4.png" id="4_iv32v"]
+[ext_resource type="Texture2D" uid="uid://dmtsl05vf8m6j" path="res://Assets/Images/3.png" id="4_tyfbj"]
+[ext_resource type="Texture2D" uid="uid://p0jr4ivpqbii" path="res://Assets/Images/9.png" id="4_un3rf"]
+[ext_resource type="Texture2D" uid="uid://dumbqiu51q8s0" path="res://Assets/Images/5.png" id="4_wst6t"]
+[ext_resource type="Texture2D" uid="uid://kxcmrai877q4" path="res://Assets/Images/6.png" id="4_xkjdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7ga5"]
+size = Vector2(1930, 1095)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7d67s"]
+radius = 80.0062
+
+[node name="Baile" type="Node2D"]
+position = Vector2(0, -5)
+script = ExtResource("1_67drc")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerFallo" type="Timer" parent="."]
+
+[node name="pantalla" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pantalla"]
+position = Vector2(955, 537.5)
+shape = SubResource("RectangleShape2D_l7ga5")
+
+[node name="qte1" type="Area2D" parent="."]
+visible = false
+priority = 1
+
+[node name="circulo" type="Sprite2D" parent="qte1"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte1_icon" type="Sprite2D" parent="qte1"]
+position = Vector2(5, 5)
+texture = ExtResource("2_7tj2x")
+
+[node name="qte1_coli" type="CollisionShape2D" parent="qte1"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte2" type="Area2D" parent="."]
+
+[node name="circulo" type="Sprite2D" parent="qte2"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte2_icon" type="Sprite2D" parent="qte2"]
+position = Vector2(5, 5)
+texture = ExtResource("4_fyjei")
+
+[node name="qte2_coli" type="CollisionShape2D" parent="qte2"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte3" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte3"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte3_icon" type="Sprite2D" parent="qte3"]
+position = Vector2(5, 5)
+texture = ExtResource("4_tyfbj")
+
+[node name="qte3_coli" type="CollisionShape2D" parent="qte3"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte4" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte4"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte4_icon" type="Sprite2D" parent="qte4"]
+position = Vector2(5, 5)
+texture = ExtResource("4_iv32v")
+
+[node name="qte4_coli" type="CollisionShape2D" parent="qte4"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte5" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte5"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte5_icon" type="Sprite2D" parent="qte5"]
+position = Vector2(5, 5)
+texture = ExtResource("4_wst6t")
+
+[node name="qte5_coli" type="CollisionShape2D" parent="qte5"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte6" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte6"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte6_icon" type="Sprite2D" parent="qte6"]
+position = Vector2(5, 5)
+texture = ExtResource("4_xkjdq")
+
+[node name="qte6_coli" type="CollisionShape2D" parent="qte6"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte7" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte7"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte7_icon" type="Sprite2D" parent="qte7"]
+position = Vector2(5, 5)
+texture = ExtResource("4_3bn4l")
+
+[node name="qte7_coli" type="CollisionShape2D" parent="qte7"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte8" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte8"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte8_icon" type="Sprite2D" parent="qte8"]
+position = Vector2(5, 5)
+texture = ExtResource("4_115i1")
+
+[node name="qte8_coli" type="CollisionShape2D" parent="qte8"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte9" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte9"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte9_icon" type="Sprite2D" parent="qte9"]
+position = Vector2(5, 5)
+texture = ExtResource("4_un3rf")
+
+[node name="qte9_coli" type="CollisionShape2D" parent="qte9"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[node name="qte10" type="Area2D" parent="."]
+visible = false
+
+[node name="circulo" type="Sprite2D" parent="qte10"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x23hr")
+
+[node name="qte10_icon" type="Sprite2D" parent="qte10"]
+position = Vector2(5, 5)
+texture = ExtResource("4_atior")
+
+[node name="qte10_coli" type="CollisionShape2D" parent="qte10"]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_7d67s")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerFallo" to="." method="_on_timer_fallo_timeout"]
+[connection signal="input_event" from="pantalla" to="." method="_on_pantalla_input_event"]
+[connection signal="input_event" from="qte1" to="." method="_on_qte_1_input_event"]
+[connection signal="input_event" from="qte2" to="." method="_on_qte_2_input_event"]
+[connection signal="input_event" from="qte3" to="." method="_on_qte_3_input_event"]
+[connection signal="input_event" from="qte4" to="." method="_on_qte_4_input_event"]
+[connection signal="input_event" from="qte5" to="." method="_on_qte_5_input_event"]
+[connection signal="input_event" from="qte6" to="." method="_on_qte_6_input_event"]
+[connection signal="input_event" from="qte7" to="." method="_on_qte_7_input_event"]
+[connection signal="input_event" from="qte8" to="." method="_on_qte_8_input_event"]
+[connection signal="input_event" from="qte9" to="." method="_on_qte_9_input_event"]
+[connection signal="input_event" from="qte10" to="." method="_on_qte_10_input_event"]

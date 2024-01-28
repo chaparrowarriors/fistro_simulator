@@ -194,20 +194,18 @@ func fin_baile(qte_result):
 	get_node("/root/Stage/Oscuridad").modulate.a = 0
 	get_node("/root/Stage/TimerFoco").stop()
 	get_node("/root/Stage/TimerFoco").start()
-<<<<<<< Updated upstream
 	
 	get_node("/root/Stage/Foco1").visible = false
 	get_node("/root/Stage/Foco2").visible = false
 	get_node("/root/Stage/Foco3").visible = false
+	
+	get_node("/root/Stage/Chiquito/AnimatedSprite2D").play('default')
 	#if qte_result == true:
 		#print("EXITO")
 	#else:
 		#print("FALLO")
 		
 	#get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
-=======
-
->>>>>>> Stashed changes
 
 func _on_timer_timeout():
 	#print("TIMEOUT")

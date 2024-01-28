@@ -344,4 +344,7 @@ position = Vector2(900, 940)
 
 [node name="TimerFoco" type="Timer" parent="."]
 
+[node name="TimerFinFoco" type="Timer" parent="."]
+
 [connection signal="timeout" from="TimerFoco" to="." method="_on_timer_foco_timeout"]
+[connection signal="timeout" from="TimerFinFoco" to="." method="_on_timer_fin_foco_timeout"]
