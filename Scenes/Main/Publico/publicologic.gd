@@ -121,6 +121,7 @@ func _on_timer_peticiones_timeout():
 	change_opacidad = false
 	$peticionglobo.visible = false
 	$peticionglobo/peticionicono.modulate.a = 1
+	$peticionglobo.modulate.a = 1
 	peticion_actual = null
 	peticion_next()
 
