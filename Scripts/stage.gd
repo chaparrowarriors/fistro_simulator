@@ -16,7 +16,6 @@ func _ready():
 	$TimerFoco.wait_time = tiempo_foco
 	$TimerFoco.start()
 	$TimerFinFoco.wait_time = tiempo_vida_foco
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
