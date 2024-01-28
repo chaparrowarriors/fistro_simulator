@@ -79,7 +79,8 @@ func peticion_next():
 	print("Start next pet")
 
 func opacidad():
-	$peticionglobo/peticionicono.modulate.a -= 0.0005
+	if not Global.pause:
+		$peticionglobo/peticionicono.modulate.a -= 0.0005
 	
 func recibir_chiste():
 	#print(Global.chiste_type)
