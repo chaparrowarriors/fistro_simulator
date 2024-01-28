@@ -1,0 +1,156 @@
+[gd_scene load_steps=19 format=3 uid="uid://dfuhgcbnyycw5"]
+
+[ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="1_qc6qx"]
+[ext_resource type="Script" path="res://Scenes/Menu/Title.gd" id="1_ssgw8"]
+[ext_resource type="AudioStream" uid="uid://dcspstuf3ix1h" path="res://Assets/Sonidos/sevillanas.mp3" id="2_nmgqp"]
+[ext_resource type="PackedScene" uid="uid://20wml2k1kjku" path="res://Scenes/Main/Publico/publico.tscn" id="3_w7r5m"]
+[ext_resource type="Texture2D" uid="uid://bmxf5qajilfnt" path="res://Assets/Images/mesa.png" id="4_46ahk"]
+[ext_resource type="Texture2D" uid="uid://g33d38y05vrd" path="res://Assets/Images/mesalejos.png" id="5_jx2ob"]
+[ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="6_yqkou"]
+[ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="7_yoego"]
+[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="8_7hukn"]
+[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="9_0ggmt"]
+[ext_resource type="Script" path="res://Scenes/Main/chiquitoMenu.gd" id="10_dvmqy"]
+[ext_resource type="Texture2D" uid="uid://c7iku1njyq352" path="res://Assets/Images/TITULO.png" id="11_5vqeh"]
+[ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="13_vlt3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
+size = Vector2(1951, 82.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd8rg"]
+size = Vector2(59, 1170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7ca0"]
+size = Vector2(94.5, 1143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64jqm"]
+atlas = ExtResource("13_vlt3f")
+region = Rect2(0, 0, 428, 523)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72o88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64jqm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Titulo" type="Node2D"]
+script = ExtResource("1_ssgw8")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1138.0
+texture = ExtResource("1_qc6qx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(972.5, 1108.12)
+shape = SubResource("RectangleShape2D_xui4y")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(19.5, 575)
+shape = SubResource("RectangleShape2D_qd8rg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1930.25, 566.5)
+shape = SubResource("RectangleShape2D_k7ca0")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nmgqp")
+volume_db = -25.0
+autoplay = true
+
+[node name="Publico1" parent="." instance=ExtResource("3_w7r5m")]
+position = Vector2(324, 728)
+script = null
+
+[node name="mesa" type="Sprite2D" parent="Publico1"]
+position = Vector2(0, 168)
+texture = ExtResource("4_46ahk")
+
+[node name="Publico2" parent="." instance=ExtResource("3_w7r5m")]
+position = Vector2(964, 728)
+script = null
+
+[node name="mesa" type="Sprite2D" parent="Publico2"]
+position = Vector2(0, 168)
+texture = ExtResource("4_46ahk")
+
+[node name="Publico3" parent="." instance=ExtResource("3_w7r5m")]
+position = Vector2(1590, 726)
+script = null
+
+[node name="mesa" type="Sprite2D" parent="Publico3"]
+position = Vector2(0, 168)
+texture = ExtResource("4_46ahk")
+
+[node name="Publico4" parent="." instance=ExtResource("3_w7r5m")]
+position = Vector2(652, 542)
+script = null
+
+[node name="mesa" type="Sprite2D" parent="Publico4"]
+position = Vector2(9, 129)
+texture = ExtResource("5_jx2ob")
+
+[node name="Publico5" parent="." instance=ExtResource("3_w7r5m")]
+position = Vector2(1279, 531)
+script = null
+
+[node name="mesa" type="Sprite2D" parent="Publico5"]
+position = Vector2(9, 133)
+texture = ExtResource("5_jx2ob")
+
+[node name="Oscuridad" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.427451)
+position = Vector2(985, 581.5)
+scale = Vector2(2.21847, 2.02962)
+texture = ExtResource("6_yqkou")
+
+[node name="Escenario" type="TextureRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1138.0
+texture = ExtResource("7_yoego")
+
+[node name="Foco1" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.701961)
+position = Vector2(314, 622)
+scale = Vector2(0.90521, 1.2549)
+texture = ExtResource("8_7hukn")
+
+[node name="Foco2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.701961)
+position = Vector2(968, 619)
+scale = Vector2(0.90521, 1.2549)
+texture = ExtResource("8_7hukn")
+
+[node name="Foco3" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.701961)
+position = Vector2(1603, 625)
+scale = Vector2(0.90521, 1.2549)
+texture = ExtResource("8_7hukn")
+
+[node name="Chiquito" parent="." instance=ExtResource("9_0ggmt")]
+visible = false
+position = Vector2(900, 940)
+script = ExtResource("10_dvmqy")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(1257, 535)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_5vqeh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(491, 806)
+sprite_frames = SubResource("SpriteFrames_72o88")
