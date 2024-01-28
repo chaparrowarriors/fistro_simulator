@@ -9,10 +9,13 @@
 script = ExtResource("1_e65hb")
 
 [node name="timerAnimo" type="Timer" parent="."]
+one_shot = true
 
 [node name="timerPeticiones" type="Timer" parent="."]
+one_shot = true
 
 [node name="timerNextPetcion" type="Timer" parent="."]
+one_shot = true
 
 [node name="peticionglobo" type="Sprite2D" parent="."]
 visible = false
