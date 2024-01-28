@@ -415,9 +415,8 @@ position = Vector2(900, 940)
 
 [node name="TimerFoco" type="Timer" parent="."]
 
-<<<<<<< HEAD
 [node name="TimerFinFoco" type="Timer" parent="."]
-=======
+
 [node name="Reloj" type="Sprite2D" parent="."]
 position = Vector2(125, 132)
 texture = ExtResource("16_tkqbr")
@@ -439,7 +438,6 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
->>>>>>> 44efb081ef635962446f152ac44b6f5e68f0dcfe
 
 [connection signal="timeout" from="TimerFoco" to="." method="_on_timer_foco_timeout"]
 [connection signal="timeout" from="TimerFinFoco" to="." method="_on_timer_fin_foco_timeout"]
