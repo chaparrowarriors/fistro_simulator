@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cysnt2ovrq7a2" path="res://Assets/Images/mujer.png" id="7_5xis5"]
 [ext_resource type="Texture2D" uid="uid://d2h8ft8vg76xc" path="res://Assets/Images/hombre2.png" id="9_hn6c0"]
 [ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="9_xa3n1"]
-[ext_resource type="Texture2D" uid="uid://dcggw6adddpm8" path="res://Assets/Images/foco.png" id="9_xshp5"]
+[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="9_xshp5"]
+[ext_resource type="Texture2D" uid="uid://bgsntclrarwpl" path="res://Assets/Images/reloj.png" id="16_tkqbr"]
+[ext_resource type="Theme" uid="uid://c3h1lirkrq0n1" path="res://temaReloj.tres" id="17_8tqny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 82.25)

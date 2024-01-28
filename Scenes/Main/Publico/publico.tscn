@@ -29,10 +29,11 @@ scale = Vector2(0.577569, 0.577569)
 texture = ExtResource("5_djiy1")
 
 [node name="peticionresult" type="Sprite2D" parent="peticionglobo"]
-[node name="peticionresult" type="Sprite2D" parent="peticionglobo"]
 visible = false
 position = Vector2(-15.8572, -54.3673)
-scale = Vector2(22.9362, 22.9362)
-texture = ExtResource("6_ytqtf")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_guixe")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timerAnimo" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timerPeticiones" to="." method="_on_timer_peticiones_timeout"]
+[connection signal="timeout" from="timerNextPetcion" to="." method="_on_timer_next_petcion_timeout"]
