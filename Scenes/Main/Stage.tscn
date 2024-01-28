@@ -282,7 +282,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Stage2" type="Node2D"]
+[node name="Stage" type="Node2D"]
 script = ExtResource("1_8emga")
 
 [node name="Fondo" type="TextureRect" parent="."]
