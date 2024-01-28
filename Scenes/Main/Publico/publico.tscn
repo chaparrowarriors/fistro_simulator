@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://20wml2k1kjku"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Publico/publicologic.gd" id="1_e65hb"]
-[ext_resource type="Texture2D" uid="uid://d3q6m5b2jqcvn" path="res://Assets/Images/nube.png" id="2_2ssy8"]
+[ext_resource type="Texture2D" uid="uid://cbe6cli5ytsdo" path="res://Assets/Images/bocadillo.png" id="4_1h0py"]
 [ext_resource type="Texture2D" uid="uid://bfbeotvs2jfvg" path="res://Assets/Images/greentick.png" id="4_guixe"]
 [ext_resource type="Texture2D" uid="uid://bqpcbim01m3r4" path="res://Assets/Images/berenjena.png" id="5_djiy1"]
 
@@ -23,12 +23,12 @@ one_shot = true
 [node name="peticionglobo" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(60, -200)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_2ssy8")
+scale = Vector2(0.441441, 0.441441)
+texture = ExtResource("4_1h0py")
 
 [node name="peticionicono" type="Sprite2D" parent="peticionglobo"]
-position = Vector2(-20, -40)
-scale = Vector2(0.3, 0.3)
+position = Vector2(-11.3266, -54.3673)
+scale = Vector2(0.577569, 0.577569)
 texture = ExtResource("5_djiy1")
 
 [node name="peticionresult" type="Sprite2D" parent="peticionglobo"]
