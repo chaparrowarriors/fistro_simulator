@@ -1,7 +1,7 @@
 extends Node2D
 
 var secuen_max = 10  # Máximo de inputs necesarios para superar el Baile
-var tiempo_max = 20.0 # Segundos máximos para realizar la secuencia.
+var tiempo_max = 12.0 # Segundos máximos para realizar la secuencia.
 var secuen_act = 1   # Secuencia actual esperada 
 var opacidad = 0.01 # Factor de cambio de opacidad
 var secuencia_ant = 0
@@ -53,7 +53,9 @@ func _ready():
 func _process(delta):
 	cambiar_opacidad()
 	if secuen_act > secuen_max:
+		secuen_act = secuen_max
 		fin_baile(true)
+		
 
 func inicializar_posicicones():
 	$qte1.set_position(Vector2(randf_range( x_min, x_max), randf_range( y_min, y_max)))
@@ -202,13 +204,37 @@ func fin_baile(qte_result):
 	get_node("/root/Stage/Foco3").visible = false
 	
 	get_node("/root/Stage/Chiquito/AnimatedSprite2D").play('default')
-	#if qte_result == true:
-		#print("EXITO")
-	#else:
-		#print("FALLO")
+	
+	$qte1.visible = false
+	$qte2.visible = false
+	$qte3.visible = false
+	$qte4.visible = false
+	$qte5.visible = false
+	$qte6.visible = false
+	$qte7.visible = false
+	$qte8.visible = false
+	$qte9.visible = false
+	$qte10.visible = false
+	
+	if qte_result == true:
+		print (get_node("/root/Stage/Publico1").animo)
+		get_node("/root/Stage/Publico1").animo += 25
+		get_node("/root/Stage/Publico2").animo += 25
+		get_node("/root/Stage/Publico3").animo += 25
+		get_node("/root/Stage/Publico4").animo += 25
+		get_node("/root/Stage/Publico5").animo += 25
 		
-	#get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
-
+		qte_result = null
+	else:
+		print (get_node("/root/Stage/Publico1").animo)
+		get_node("/root/Stage/Publico1").animo -= 25
+		get_node("/root/Stage/Publico2").animo -= 25
+		get_node("/root/Stage/Publico3").animo -= 25
+		get_node("/root/Stage/Publico4").animo -= 25
+		get_node("/root/Stage/Publico5").animo -= 25
+		
+		qte_result = null
+		
 func _on_timer_timeout():
 	#print("TIMEOUT")
 	fin_baile(false)
