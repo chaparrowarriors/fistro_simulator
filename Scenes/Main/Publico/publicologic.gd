@@ -8,7 +8,7 @@ var peticiones_randtime_wait = [7, 14]
 var peticiones_randtime_next = [10, 20]
 var descenso = 2
 var peticion_actual
-var tiempo = 0
+@export var tiempo = 0
 var randtime_wait = 0
 var randtime_next = 0
 var randpeti = 0
