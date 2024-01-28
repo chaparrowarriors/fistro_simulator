@@ -4,6 +4,7 @@ var secuen_max = 10  # Máximo de inputs necesarios para superar el Baile
 var tiempo_max = 20.0 # Segundos máximos para realizar la secuencia.
 var secuen_act = 1   # Secuencia actual esperada 
 var opacidad = 0.01 # Factor de cambio de opacidad
+var secuencia_ant = 0
 
 # Constantes de posición de pantalla x min/max y y min/max
 var viewport_tam
@@ -27,6 +28,8 @@ var qte9_com = false
 func _ready():
 	$Timer.wait_time = tiempo_max
 	$Timer.start()
+	
+	$TimerFallo.wait_time = 0.5
 	
 	viewport_tam = get_viewport_rect().size
 	x_max = viewport_tam.x - 80
@@ -108,12 +111,13 @@ func cambiar_opacidad():
 		$qte10.modulate.a = $qte10.modulate.a + opacidad
 		if qte9_com == false:
 			$qte10.visible = true
-		
+			
 func _on_qte_1_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and secuen_act == 1: 
 			$qte1.visible = false
 			$qte2.visible = true
 			secuen_act = secuen_act + 1
+			$TimerFallo.stop()
 			
 func _on_qte_2_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and secuen_act == 2: 
@@ -121,6 +125,7 @@ func _on_qte_2_input_event(viewport, event, shape_idx):
 			$qte2.visible = false
 			$qte3.visible = true
 			secuen_act = secuen_act + 1
+			$TimerFallo.stop()
 
 func _on_qte_3_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and secuen_act == 3: 
@@ -177,13 +182,19 @@ func _on_qte_10_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and secuen_act == 10: 
 			$qte10.visible = false
 			secuen_act = secuen_act + 1
-			
+
+#func _on_pantalla_input_event(viewport, event, shape_idx):
+	#if Input.is_action_just_pressed("Click"):
+		#$TimerFallo.start()
+
+					
 func fin_baile(qte_result):
 	$Timer.stop()
 	Global.baile_result = qte_result
 	get_node("/root/Stage/Oscuridad").modulate.a = 0
 	get_node("/root/Stage/TimerFoco").stop()
 	get_node("/root/Stage/TimerFoco").start()
+<<<<<<< Updated upstream
 	
 	get_node("/root/Stage/Foco1").visible = false
 	get_node("/root/Stage/Foco2").visible = false
@@ -194,8 +205,15 @@ func fin_baile(qte_result):
 		#print("FALLO")
 		
 	#get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
+=======
+
+>>>>>>> Stashed changes
 
 func _on_timer_timeout():
 	#print("TIMEOUT")
 	fin_baile(false)
 	#get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
+
+
+func _on_timer_fallo_timeout():
+	fin_baile(false)

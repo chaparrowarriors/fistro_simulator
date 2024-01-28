@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://6hdhbk4rh3p4"]
+[gd_scene load_steps=15 format=3 uid="uid://6hdhbk4rh3p4"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Eventos/Baile/baile.gd" id="1_67drc"]
 [ext_resource type="Texture2D" uid="uid://bpobteenvkjn7" path="res://Assets/Images/1.png" id="2_7tj2x"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dumbqiu51q8s0" path="res://Assets/Images/5.png" id="4_wst6t"]
 [ext_resource type="Texture2D" uid="uid://kxcmrai877q4" path="res://Assets/Images/6.png" id="4_xkjdq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7ga5"]
+size = Vector2(1930, 1095)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_7d67s"]
 radius = 80.0062
 
@@ -22,8 +25,17 @@ script = ExtResource("1_67drc")
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="TimerFallo" type="Timer" parent="."]
+
+[node name="pantalla" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pantalla"]
+position = Vector2(955, 537.5)
+shape = SubResource("RectangleShape2D_l7ga5")
+
 [node name="qte1" type="Area2D" parent="."]
 visible = false
+priority = 1
 
 [node name="circulo" type="Sprite2D" parent="qte1"]
 scale = Vector2(0.15, 0.15)
@@ -172,6 +184,8 @@ position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_7d67s")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerFallo" to="." method="_on_timer_fallo_timeout"]
+[connection signal="input_event" from="pantalla" to="." method="_on_pantalla_input_event"]
 [connection signal="input_event" from="qte1" to="." method="_on_qte_1_input_event"]
 [connection signal="input_event" from="qte2" to="." method="_on_qte_2_input_event"]
 [connection signal="input_event" from="qte3" to="." method="_on_qte_3_input_event"]
