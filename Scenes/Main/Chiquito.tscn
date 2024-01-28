@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://dp68yxvmyuqfc" path="res://Assets/Sonidos/y_si_quiere_aceituna_negra_compra_una_cabra.mp3" id="9_hqaq6"]
 [ext_resource type="AudioStream" uid="uid://bowr8toaal4b0" path="res://Assets/Sonidos/te_habla_un_hombre_malo_de_la_pradera.mp3" id="10_vhtnl"]
 [ext_resource type="AudioStream" uid="uid://qsrpsu8pc1sj" path="res://Assets/Sonidos/e_cannn_ecan_de_mor_demor_ecan.mp3" id="11_yvxeh"]
+[ext_resource type="AudioStream" uid="uid://dtyk47ne1as4n" path="res://Assets/Sonidos/al_ataque.mp3" id="12_6iff6"]
 [ext_resource type="Script" path="res://Scenes/Main/chisteQTE.gd" id="12_565q1"]
-[ext_resource type="AudioStream" uid="uid://c5bxjtn47fdju" path="res://Assets/Sonidos/hadouken.mp3" id="12_indib"]
 [ext_resource type="AudioStream" uid="uid://cxqb3l7h46ke6" path="res://Assets/Sonidos/short-crowd-cheer-6713.mp3" id="13_11s6j"]
 [ext_resource type="AudioStream" uid="uid://csrxb5b35ceq5" path="res://Assets/Sonidos/boo-6377.mp3" id="14_x5agm"]
 
@@ -171,8 +171,8 @@ stream = ExtResource("11_yvxeh")
 [node name="AudioChiste4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_hqaq6")
 
-[node name="EasterEgg" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_indib")
+[node name="AudioMovimiento" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_6iff6")
 
 [node name="QTE" type="Node2D" parent="."]
 script = ExtResource("12_565q1")
