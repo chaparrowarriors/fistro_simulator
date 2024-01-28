@@ -85,7 +85,7 @@ func peticion_next():
 	#print(randtime_next)
 	$timerNextPetcion.wait_time = randtime_next
 	$timerNextPetcion.start()
-	print("Start next pet")
+	#print("Start next pet")
 
 func opacidad():
 	if not Global.pause:
