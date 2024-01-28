@@ -1,10 +1,10 @@
-[gd_scene load_steps=46 format=3 uid="uid://b8r2kugas11x5"]
+[gd_scene load_steps=46 format=3 uid="uid://crfhs4t2pbcds"]
 
 [ext_resource type="Script" path="res://Scripts/stage.gd" id="1_8emga"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="2_m8l77"]
 [ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="2_yrv7y"]
 [ext_resource type="AudioStream" uid="uid://dcspstuf3ix1h" path="res://Assets/Sonidos/sevillanas.mp3" id="3_28dyd"]
-[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="3_wk6wh"]
+[ext_resource type="PackedScene" path="res://Scenes/Main/Chiquito.tscn" id="3_wk6wh"]
 [ext_resource type="PackedScene" uid="uid://20wml2k1kjku" path="res://Scenes/Main/Publico/publico.tscn" id="5_bddh1"]
 [ext_resource type="Texture2D" uid="uid://bmxf5qajilfnt" path="res://Assets/Images/mesa.png" id="5_t4a5j"]
 [ext_resource type="Texture2D" uid="uid://wx3ycxielmul" path="res://Assets/Images/hombre.png" id="5_tw6gf"]
@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cysnt2ovrq7a2" path="res://Assets/Images/mujer.png" id="7_5xis5"]
 [ext_resource type="Texture2D" uid="uid://d2h8ft8vg76xc" path="res://Assets/Images/hombre2.png" id="9_hn6c0"]
 [ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="9_xa3n1"]
-[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="9_xshp5"]
+[ext_resource type="Texture2D" uid="uid://cbwg3ggctm8sr" path="res://Assets/Images/foco.png" id="9_xshp5"]
 [ext_resource type="Texture2D" uid="uid://bgsntclrarwpl" path="res://Assets/Images/reloj.png" id="16_tkqbr"]
-[ext_resource type="Theme" uid="uid://c3h1lirkrq0n1" path="res://temaReloj.tres" id="17_8tqny"]
+[ext_resource type="Theme" uid="uid://ddn2jjr8xmws7" path="res://temaReloj.tres" id="17_8tqny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 82.25)

@@ -26,6 +26,7 @@ func _process(delta):
 	if mins < 10:
 		mins = str("0", mins)
 	$Reloj/Hora.text = str(mins, ":",secs)
+	checkAnimo()
 	pass
 	
 func checkBaile():
@@ -57,6 +58,7 @@ func _input(event):
 func recibirChiste():
 	if Global.zonaChiquito < 0.20:
 		print("Entra1")
+		print($Publico1.get("animo"))
 		$Publico1.recibir_chiste()
 	elif Global.zonaChiquito < 0.40:
 		print("Entra2")
@@ -103,3 +105,20 @@ func _on_timer_fin_foco_timeout():
 	$Foco1.visible = false
 	$Foco2.visible = false
 	$Foco3.visible = false
+
+func checkAnimo():
+	if $Publico1.get("animo") <= 0:
+		puntuacion()
+	if $Publico2.get("animo") <= 0:
+		puntuacion()
+	if $Publico3.get("animo") <= 0:
+		puntuacion()
+	if $Publico4.get("animo") <= 0:
+		puntuacion()
+	if $Publico5.get("animo") <= 0:
+		puntuacion()
+
+func puntuacion():
+	Global.puntuacionFinal = $Publico1.get("animo") + $Publico2.get("animo") + $Publico3.get("animo") + $Publico4.get("animo") + $Publico5.get("animo")
+	print($Publico1.get("animo"), " - ", $Publico2.get("animo"), " - ", $Publico3.get("animo"), " - ", $Publico4.get("animo"), " - ", $Publico5.get("animo"))
+	print(Global.puntuacionFinal)
