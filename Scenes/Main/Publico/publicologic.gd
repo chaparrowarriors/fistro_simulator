@@ -10,6 +10,7 @@ var descenso = 1
 var peticion_actual
 var tiempo = 0
 var randtime_wait = 0
+var randtime_next = 0
 var randpeti
 var change_opacidad = false
 
@@ -29,11 +30,14 @@ func _process(delta):
 	if change_opacidad:
 		opacidad()
 	pauseTimer(Global.pause)
+	#print("wait: ", $timerPeticiones.time_left)
+	#print("next: ", $timerNextPetcion.time_left)
 
 func pauseTimer(pause):
 	$timerPeticiones.paused = pause
 	$timerAnimo.paused = pause
 	$timerNextPetcion.paused = pause
+	
 func animo_bar():
 	animo -= descenso
 	if animo >= 75:
@@ -48,26 +52,31 @@ func animo_bar():
 func _on_timer_timeout():
 	animo_bar()
 	tiempo += 1
-	#print(animo, "-", tiempo)
+	print(tiempo)
 	$timerAnimo.start()
 
 func peticion():
+	#print("entra en peticion")
 	randpeti = randi_range(0,3)
 	peticion_actual = peticiones[randpeti]
 	$peticionglobo/peticionicono.texture = load(peticiones_icon[randpeti])
 	$peticionglobo.visible = true
 	#print(randpeti)
-	randtime_wait = randf_range(peticiones_randtime_wait[0], peticiones_randtime_wait[1])
+	randtime_wait = randi_range(peticiones_randtime_wait[0], peticiones_randtime_wait[1])
 	change_opacidad = true
+	print(randtime_wait)
 	$timerPeticiones.wait_time = randtime_wait
 	$timerPeticiones.start()
 	#await get_tree().create_timer(randtime_wait).timeout
 	
 func peticion_next():
-	var randtime_next = randf_range(peticiones_randtime_next[0], peticiones_randtime_wait[1])
+	#print("entra peticion next")
+	randtime_next = randi_range(peticiones_randtime_next[0], peticiones_randtime_wait[1])
 	#await get_tree().create_timer(randtime_next).timeout
+	print(randtime_next)
 	$timerNextPetcion.wait_time = randtime_next
 	$timerNextPetcion.start()
+	print("Start next pet")
 
 func opacidad():
 	$peticionglobo/peticionicono.modulate.a -= 0.0005
@@ -96,6 +105,7 @@ func recibir_chiste():
 
 
 func _on_timer_peticiones_timeout():
+	#print("final timer wait")
 	change_opacidad = false
 	$peticionglobo.visible = false
 	$peticionglobo/peticionicono.modulate.a = 1
@@ -104,4 +114,5 @@ func _on_timer_peticiones_timeout():
 
 
 func _on_timer_next_petcion_timeout():
+	#print("final timer next")
 	peticion()

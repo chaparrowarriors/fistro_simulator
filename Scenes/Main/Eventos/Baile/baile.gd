@@ -47,6 +47,7 @@ func _ready():
 	$qte10.modulate.a = 0
 	
 	$qte1.visible = true
+	$Honrrao.play()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -190,6 +191,7 @@ func _on_qte_10_input_event(viewport, event, shape_idx):
 					
 func fin_baile(qte_result):
 	$Timer.stop()
+	$Honrrao.stop()
 	Global.baile_result = qte_result
 	get_node("/root/Stage/Oscuridad").modulate.a = 0
 	get_node("/root/Stage/TimerFoco").stop()

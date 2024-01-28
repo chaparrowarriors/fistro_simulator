@@ -5,6 +5,8 @@ signal contarChiste
 var tiempo_foco = 20.0
 var tiempo_vida_foco = 4.0
 var baileOn = false
+var reloj = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TimerFoco.wait_time = tiempo_foco
@@ -15,6 +17,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	reloj += delta
+	var secs = int(floor(reloj))
+	var mins = int(floor(reloj))/60
+	secs = secs % 60
+	if secs < 10:
+		secs = str("0", secs)
+	if mins < 10:
+		mins = str("0", mins)
+	$Reloj/Hora.text = str(mins, ":",secs)
 	pass
 	
 func checkBaile():
