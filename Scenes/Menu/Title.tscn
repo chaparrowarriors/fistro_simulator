@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://blcamtgnhynwp"]
+[gd_scene load_steps=20 format=3 uid="uid://dsn8bevj1bhs0"]
 
 [ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="1_qc6qx"]
 [ext_resource type="Script" path="res://Scenes/Menu/Title.gd" id="1_ssgw8"]
@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://g33d38y05vrd" path="res://Assets/Images/mesalejos.png" id="5_jx2ob"]
 [ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="6_yqkou"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="7_yoego"]
-[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="8_7hukn"]
-[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="9_0ggmt"]
+[ext_resource type="Texture2D" uid="uid://cbwg3ggctm8sr" path="res://Assets/Images/foco.png" id="8_7hukn"]
+[ext_resource type="PackedScene" path="res://Scenes/Main/Chiquito.tscn" id="9_0ggmt"]
 [ext_resource type="Script" path="res://Scenes/Main/chiquitoMenu.gd" id="10_dvmqy"]
 [ext_resource type="Texture2D" uid="uid://c7iku1njyq352" path="res://Assets/Images/TITULO.png" id="11_5vqeh"]
 [ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="13_vlt3f"]
