@@ -30,8 +30,8 @@ func _process(delta):
 	if change_opacidad:
 		opacidad()
 	pauseTimer(Global.pause)
-	print("wait: ", $timerPeticiones.time_left)
-	print("next: ", $timerNextPetcion.time_left)
+	#print("wait: ", $timerPeticiones.time_left)
+	#print("next: ", $timerNextPetcion.time_left)
 
 func pauseTimer(pause):
 	$timerPeticiones.paused = pause
@@ -55,7 +55,7 @@ func _on_timer_timeout():
 	$timerAnimo.start()
 
 func peticion():
-	print("entra en peticion")
+	#print("entra en peticion")
 	randpeti = randi_range(0,3)
 	peticion_actual = peticiones[randpeti]
 	$peticionglobo/peticionicono.texture = load(peticiones_icon[randpeti])
@@ -69,7 +69,7 @@ func peticion():
 	#await get_tree().create_timer(randtime_wait).timeout
 	
 func peticion_next():
-	print("entra peticion next")
+	#print("entra peticion next")
 	randtime_next = randi_range(peticiones_randtime_next[0], peticiones_randtime_wait[1])
 	#await get_tree().create_timer(randtime_next).timeout
 	print(randtime_next)
@@ -103,7 +103,7 @@ func recibir_chiste():
 
 
 func _on_timer_peticiones_timeout():
-	print("final timer wait")
+	#print("final timer wait")
 	change_opacidad = false
 	$peticionglobo.visible = false
 	$peticionglobo/peticionicono.modulate.a = 1
@@ -112,5 +112,5 @@ func _on_timer_peticiones_timeout():
 
 
 func _on_timer_next_petcion_timeout():
-	print("final timer next")
+	#print("final timer next")
 	peticion()
