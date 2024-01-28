@@ -200,6 +200,7 @@ func fin_baile(qte_result):
 	get_node("/root/Stage/TimerFoco").start()
 	
 	get_node("/root/Stage").baileOn = false
+	get_node("/root/Stage/Chiquito").baileOn = false
 	
 	get_node("/root/Stage/Foco1").visible = false
 	get_node("/root/Stage/Foco2").visible = false

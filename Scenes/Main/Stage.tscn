@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b8r2kugas11x5"]
+[gd_scene load_steps=47 format=3 uid="uid://b8r2kugas11x5"]
 
 [ext_resource type="Script" path="res://Scripts/stage.gd" id="1_8emga"]
 [ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="2_m8l77"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="9_xshp5"]
 [ext_resource type="Texture2D" uid="uid://bgsntclrarwpl" path="res://Assets/Images/reloj.png" id="16_tkqbr"]
 [ext_resource type="Theme" uid="uid://ddn2jjr8xmws7" path="res://temaReloj.tres" id="17_8tqny"]
+[ext_resource type="Texture2D" uid="uid://d2ppv0lff32ys" path="res://Assets/Images/ayuda.png" id="18_n1yvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
 size = Vector2(1951, 82.25)
@@ -477,6 +478,10 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
+
+[node name="Ayuda" type="Sprite2D" parent="."]
+position = Vector2(984, 527)
+texture = ExtResource("18_n1yvs")
 
 [connection signal="timeout" from="TimerFoco" to="." method="_on_timer_foco_timeout"]
 [connection signal="timeout" from="TimerFinFoco" to="." method="_on_timer_fin_foco_timeout"]
