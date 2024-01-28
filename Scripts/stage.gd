@@ -74,20 +74,25 @@ func recibirChiste():
 	if not Global.pause:
 		if Global.zonaChiquito < 0.20:
 			print("Entra1")
-			print($Publico1.get("animo"))
-			$Publico1.recibir_chiste()
+			#print($Publico1.get("animo"))
+			if $Publico1.get("tiempo") > 0:
+				$Publico1.recibir_chiste()
 		elif Global.zonaChiquito < 0.40:
 			print("Entra2")
-			$Publico4.recibir_chiste()
+			if $Publico4.get("tiempo") > 0:
+				$Publico4.recibir_chiste()
 		elif Global.zonaChiquito < 0.60:
 			print("Entra3")
-			$Publico2.recibir_chiste()
+			if $Publico2.get("tiempo") > 0:
+				$Publico2.recibir_chiste()
 		elif Global.zonaChiquito < 0.80:
 			print("Entra4")
-			$Publico5.recibir_chiste()
+			if $Publico5.get("tiempo") > 0:
+				$Publico5.recibir_chiste()
 		else:
 			print("Entra5")
-			$Publico3.recibir_chiste()
+			if $Publico3.get("tiempo") > 0:
+				$Publico3.recibir_chiste()
 
 func actuarFoco():
 	var foco = randi_range(1,3)
