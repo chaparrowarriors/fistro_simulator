@@ -1,7 +1,7 @@
 extends Node2D
 
 var secuen_max = 10  # Máximo de inputs necesarios para superar el Baile
-var tiempo_max = 12.0 # Segundos máximos para realizar la secuencia.
+var tiempo_max = 17.0 # Segundos máximos para realizar la secuencia.
 var secuen_act = 1   # Secuencia actual esperada 
 var opacidad = 0.01 # Factor de cambio de opacidad
 var secuencia_ant = 0
@@ -198,6 +198,8 @@ func fin_baile(qte_result):
 	get_node("/root/Stage/Oscuridad").modulate.a = 0
 	get_node("/root/Stage/TimerFoco").stop()
 	get_node("/root/Stage/TimerFoco").start()
+	
+	get_node("/root/Stage").baileOn = false
 	
 	get_node("/root/Stage/Foco1").visible = false
 	get_node("/root/Stage/Foco2").visible = false

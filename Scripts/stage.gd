@@ -41,11 +41,11 @@ func checkBaile():
 	if baileOn:
 		return
 		
-	if Global.zonaChiquito < 0.33 and $Foco1.visible == true:
+	if Global.zonaChiquito < 0.33 and $Foco1.visible == true and $Chiquito.chisteOn == false:
 		actuarBaile()
-	elif Global.zonaChiquito > 0.33 and Global.zonaChiquito < 0.66 and $Foco2.visible == true:
+	elif Global.zonaChiquito > 0.33 and Global.zonaChiquito < 0.66 and $Foco2.visible == true and $Chiquito.chisteOn == false:
 		actuarBaile()
-	elif Global.zonaChiquito > 0.66 and $Foco3.visible == true:
+	elif Global.zonaChiquito > 0.66 and $Foco3.visible == true and $Chiquito.chisteOn == false:
 		actuarBaile()
 
 func _input(event):
