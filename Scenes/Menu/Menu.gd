@@ -29,4 +29,4 @@ func _input(event):
 		elif Global.zonaChiquito > 0.33 and Global.zonaChiquito < 0.66:
 			get_tree().change_scene_to_file("res://Scenes/Main/Stage.tscn")
 		elif Global.zonaChiquito > 0.66:
-			pass
+			get_tree().quit()
