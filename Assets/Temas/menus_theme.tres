@@ -1,8 +1,18 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://x3muhlvxsd7e"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://x3muhlvxsd7e"]
 
 [ext_resource type="FontFile" uid="uid://blkwh2jsvx3d0" path="res://Assets/Fuentes/Slackey.ttf" id="1_t8ok1"]
 [ext_resource type="FontFile" uid="uid://donfeh72425am" path="res://Assets/Fuentes/LITHOB.ttf" id="2_lqj8m"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtl6g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4i6dm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_knd0n"]
+
 [resource]
 default_font = ExtResource("2_lqj8m")
 Label/fonts/font = ExtResource("1_t8ok1")
+LineEdit/colors/selection_color = Color(0, 0, 0, 0)
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_rtl6g")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_4i6dm")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_knd0n")

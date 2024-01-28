@@ -1,57 +1,443 @@
-[gd_scene load_steps=6 format=3 uid="uid://buop4dlyehu4k"]
+[gd_scene load_steps=46 format=3 uid="uid://dl0vqjwa7e8qc"]
 
-[ext_resource type="Script" path="res://Menu.gd" id="1_8feo3"]
-[ext_resource type="FontFile" uid="uid://donfeh72425am" path="res://Assets/Fuentes/LITHOB.ttf" id="2_sipge"]
-[ext_resource type="PackedScene" path="res://Scenes/Main/StageIdle.tscn" id="3_8w0f8"]
-[ext_resource type="Theme" uid="uid://x3muhlvxsd7e" path="res://Assets/Temas/menus_theme.tres" id="3_21p16"]
-[ext_resource type="Script" path="res://Scripts/stageIdle.gd" id="4_vb0wb"]
+[ext_resource type="Script" path="res://Scripts/stage.gd" id="1_skm1k"]
+[ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="2_b0lgo"]
+[ext_resource type="AudioStream" uid="uid://dcspstuf3ix1h" path="res://Assets/Sonidos/sevillanas.mp3" id="3_cmlwp"]
+[ext_resource type="PackedScene" uid="uid://20wml2k1kjku" path="res://Scenes/Main/Publico/publico.tscn" id="4_5ged4"]
+[ext_resource type="Texture2D" uid="uid://wx3ycxielmul" path="res://Assets/Images/hombre.png" id="5_x34v2"]
+[ext_resource type="Texture2D" uid="uid://bmxf5qajilfnt" path="res://Assets/Images/mesa.png" id="6_eyiq3"]
+[ext_resource type="Texture2D" uid="uid://cv4yjffemlqts" path="res://Assets/Images/anciano.png" id="7_p206j"]
+[ext_resource type="Texture2D" uid="uid://cysnt2ovrq7a2" path="res://Assets/Images/mujer.png" id="8_yg6wq"]
+[ext_resource type="Texture2D" uid="uid://bybqot8xcxej0" path="res://Assets/Images/mujer2.png" id="9_gk2un"]
+[ext_resource type="Texture2D" uid="uid://g33d38y05vrd" path="res://Assets/Images/mesalejos.png" id="10_qikww"]
+[ext_resource type="Texture2D" uid="uid://d2h8ft8vg76xc" path="res://Assets/Images/hombre2.png" id="11_cw88p"]
+[ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="12_17733"]
+[ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="13_jru0y"]
+[ext_resource type="Texture2D" uid="uid://b4ufhew7bdc7r" path="res://Assets/Images/foco.png" id="14_nmelb"]
+[ext_resource type="PackedScene" uid="uid://dgc1uk8g5qwls" path="res://Scenes/Main/Chiquito.tscn" id="15_uxi0r"]
+[ext_resource type="Texture2D" uid="uid://bgsntclrarwpl" path="res://Assets/Images/reloj.png" id="16_yy5or"]
+[ext_resource type="Theme" uid="uid://c3h1lirkrq0n1" path="res://temaReloj.tres" id="17_wr5ka"]
 
-[node name="Menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_8feo3")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xui4y"]
+size = Vector2(1951, 82.25)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -100.0
-offset_right = 250.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd8rg"]
+size = Vector2(59, 1170)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7ca0"]
+size = Vector2(94.5, 1143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bcy6"]
+atlas = ExtResource("5_x34v2")
+region = Rect2(1059, 0, 353, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dcay"]
+atlas = ExtResource("5_x34v2")
+region = Rect2(0, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28jjw"]
+atlas = ExtResource("5_x34v2")
+region = Rect2(373, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2te50"]
+atlas = ExtResource("5_x34v2")
+region = Rect2(714, 0, 357, 459)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_541wt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bcy6")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dcay")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28jjw")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2te50")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1l7i"]
+atlas = ExtResource("7_p206j")
+region = Rect2(1056, 0, 352, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01bt3"]
+atlas = ExtResource("7_p206j")
+region = Rect2(0, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6h01"]
+atlas = ExtResource("7_p206j")
+region = Rect2(362, 0, 362, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_165aw"]
+atlas = ExtResource("7_p206j")
+region = Rect2(724, 0, 362, 459)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lx73c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1l7i")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01bt3")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6h01")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_165aw")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scyon"]
+atlas = ExtResource("8_yg6wq")
+region = Rect2(1100, 0, 361, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mvmv"]
+atlas = ExtResource("8_yg6wq")
+region = Rect2(37, 0, 376, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cglp3"]
+atlas = ExtResource("8_yg6wq")
+region = Rect2(399, 0, 361, 561)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jr8j"]
+atlas = ExtResource("8_yg6wq")
+region = Rect2(760, 0, 361, 561)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd42j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scyon")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mvmv")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cglp3")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jr8j")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyc2f"]
+atlas = ExtResource("9_gk2un")
+region = Rect2(1095, 25, 365, 536)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a4pt"]
+atlas = ExtResource("9_gk2un")
+region = Rect2(45, 62, 362, 499)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh7pu"]
+atlas = ExtResource("9_gk2un")
+region = Rect2(407, 62, 362, 499)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26xyv"]
+atlas = ExtResource("9_gk2un")
+region = Rect2(746, 62, 373, 499)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3xdh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyc2f")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a4pt")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh7pu")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26xyv")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1qh2"]
+atlas = ExtResource("11_cw88p")
+region = Rect2(1062, 0, 354, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73fsb"]
+atlas = ExtResource("11_cw88p")
+region = Rect2(0, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cd1t"]
+atlas = ExtResource("11_cw88p")
+region = Rect2(373, 0, 373, 459)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtp6g"]
+atlas = ExtResource("11_cw88p")
+region = Rect2(716, 0, 358, 459)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hxux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1qh2")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73fsb")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cd1t")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtp6g")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_skm1k")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1138.0
+texture = ExtResource("2_b0lgo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(972.5, 1108.12)
+shape = SubResource("RectangleShape2D_xui4y")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(19.5, 575)
+shape = SubResource("RectangleShape2D_qd8rg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1930.25, 566.5)
+shape = SubResource("RectangleShape2D_k7ca0")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cmlwp")
+volume_db = -25.0
+autoplay = true
+
+[node name="Publico1" parent="." instance=ExtResource("4_5ged4")]
+position = Vector2(324, 728)
+
+[node name="expresion" type="AnimatedSprite2D" parent="Publico1"]
+position = Vector2(0, -42)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_541wt")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico1"]
+position = Vector2(0, 168)
+texture = ExtResource("6_eyiq3")
+
+[node name="Publico2" parent="." instance=ExtResource("4_5ged4")]
+position = Vector2(964, 728)
+
+[node name="expresion" type="AnimatedSprite2D" parent="Publico2"]
+position = Vector2(0, -34)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lx73c")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico2"]
+position = Vector2(0, 168)
+texture = ExtResource("6_eyiq3")
+
+[node name="Publico3" parent="." instance=ExtResource("4_5ged4")]
+position = Vector2(1590, 726)
+
+[node name="expresion" type="AnimatedSprite2D" parent="Publico3"]
+position = Vector2(0, -66)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dd42j")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico3"]
+position = Vector2(0, 168)
+texture = ExtResource("6_eyiq3")
+
+[node name="Publico4" parent="." instance=ExtResource("4_5ged4")]
+position = Vector2(652, 542)
+
+[node name="expresion" type="AnimatedSprite2D" parent="Publico4"]
+position = Vector2(12, -40)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_d3xdh")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico4"]
+position = Vector2(9, 129)
+texture = ExtResource("10_qikww")
+
+[node name="Publico5" parent="." instance=ExtResource("4_5ged4")]
+position = Vector2(1279, 531)
+
+[node name="expresion" type="AnimatedSprite2D" parent="Publico5"]
+position = Vector2(0, -34)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_0hxux")
+animation = &"happy"
+
+[node name="mesa" type="Sprite2D" parent="Publico5"]
+position = Vector2(9, 133)
+texture = ExtResource("10_qikww")
+
+[node name="Escenario" type="TextureRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1138.0
+texture = ExtResource("12_17733")
+
+[node name="Oscuridad" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(985, 581.5)
+scale = Vector2(2.21847, 2.02962)
+texture = ExtResource("13_jru0y")
+
+[node name="Foco1" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.701961)
+position = Vector2(314, 622)
+scale = Vector2(0.90521, 1.2549)
+texture = ExtResource("14_nmelb")
+
+[node name="Foco2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.701961)
+position = Vector2(968, 619)
+scale = Vector2(0.90521, 1.2549)
+texture = ExtResource("14_nmelb")
+
+[node name="Foco3" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 0.701961)
+position = Vector2(1603, 625)
+scale = Vector2(0.90521, 1.2549)
+texture = ExtResource("14_nmelb")
+
+[node name="Chiquito" parent="." instance=ExtResource("15_uxi0r")]
+position = Vector2(900, 940)
+
+[node name="TimerFoco" type="Timer" parent="."]
+
+[node name="TimerFinFoco" type="Timer" parent="."]
+
+[node name="Reloj" type="Sprite2D" parent="."]
+position = Vector2(125, 132)
+texture = ExtResource("16_yy5or")
+
+[node name="Hora" type="TextEdit" parent="Reloj"]
+offset_left = -47.0
+offset_top = 6.0
+offset_right = 47.0
+offset_bottom = 52.0
+size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("17_wr5ka")
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+text = "00:00"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
 
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_sipge")
-text = "Play"
-
-[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_sipge")
-text = "Credits"
-
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_21p16")
-theme_override_fonts/font = ExtResource("2_sipge")
-text = "Quit"
-
-[node name="Stage2" parent="." instance=ExtResource("3_8w0f8")]
-script = ExtResource("4_vb0wb")
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="TimerFoco" to="." method="_on_timer_foco_timeout"]
+[connection signal="timeout" from="TimerFinFoco" to="." method="_on_timer_fin_foco_timeout"]

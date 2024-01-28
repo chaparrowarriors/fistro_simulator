@@ -1,0 +1,184 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7w0tho4g7f4i"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/Puntuacion.gd" id="1_7v7iv"]
+[ext_resource type="Texture2D" uid="uid://cebux0e3wg4ge" path="res://Assets/Images/fondo.png" id="1_lgb58"]
+[ext_resource type="Texture2D" uid="uid://b14rmlpddpi7t" path="res://Assets/Images/oscurecido.png" id="2_t3tp8"]
+[ext_resource type="Texture2D" uid="uid://ci3fdv1pgtvut" path="res://Assets/Images/stage.png" id="3_7n86s"]
+[ext_resource type="Texture2D" uid="uid://bi3gy0d7tx34x" path="res://Assets/Images/applause.png" id="4_uqf4l"]
+[ext_resource type="Theme" uid="uid://x3muhlvxsd7e" path="res://Assets/Temas/menus_theme.tres" id="5_rqisv"]
+[ext_resource type="FontFile" uid="uid://blkwh2jsvx3d0" path="res://Assets/Fuentes/Slackey.ttf" id="6_qmct3"]
+[ext_resource type="Texture2D" uid="uid://cvbyvv5c7lql7" path="res://Assets/Images/chiquito.png" id="8_bn6lk"]
+[ext_resource type="Texture2D" uid="uid://bn6dq5ixjw1q3" path="res://Assets/Images/bocadillo2.png" id="8_pvclo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrbhd"]
+atlas = ExtResource("8_bn6lk")
+region = Rect2(0, 0, 428, 523)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccaiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrbhd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7v7iv")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1138.0
+texture = ExtResource("1_lgb58")
+
+[node name="Oscuridad" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+position = Vector2(985, 581.5)
+scale = Vector2(2.21847, 2.02962)
+texture = ExtResource("2_t3tp8")
+
+[node name="Escenario" type="TextureRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1138.0
+texture = ExtResource("3_7n86s")
+
+[node name="Applause1" type="Sprite2D" parent="."]
+position = Vector2(390, 425)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_uqf4l")
+
+[node name="Applause2" type="Sprite2D" parent="."]
+position = Vector2(688, 425)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_uqf4l")
+
+[node name="Applause3" type="Sprite2D" parent="."]
+position = Vector2(984, 425)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_uqf4l")
+
+[node name="Applause4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(1304, 425)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_uqf4l")
+
+[node name="Applause5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(1598, 425)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_uqf4l")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 254.0
+offset_top = 573.0
+offset_right = 1740.0
+offset_bottom = 730.0
+theme = ExtResource("5_rqisv")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_qmct3")
+theme_override_font_sizes/font_size = 40
+text = "Eres más peligroso que un tiroteo en un ascensor. Ohhh.. ! que arte tienes ...! siete caballos vienen de bonansaaa ... ... .ole, ole, ole ..."
+alignment = 1
+editable = false
+
+[node name="Bocadillo" type="Sprite2D" parent="."]
+position = Vector2(1257, 792.008)
+scale = Vector2(2.70312, 1.93214)
+texture = ExtResource("8_pvclo")
+
+[node name="uno" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 844.0
+offset_top = 622.0
+offset_right = 1715.0
+offset_bottom = 963.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_qmct3")
+theme_override_font_sizes/normal_font_size = 45
+text = "Por la gloria de mi madre! Trabajas menos que el sastre de Tarzán ..."
+drag_and_drop_selection_enabled = false
+
+[node name="dos" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 844.0
+offset_top = 622.0
+offset_right = 1715.0
+offset_bottom = 963.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_qmct3")
+theme_override_font_sizes/normal_font_size = 45
+text = " A guan, e peich, agromenaguer . Que vamos a llamar a la Meretérita! Bien, cobarde!"
+drag_and_drop_selection_enabled = false
+
+[node name="tres" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 844.0
+offset_top = 622.0
+offset_right = 1715.0
+offset_bottom = 963.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_qmct3")
+theme_override_font_sizes/normal_font_size = 45
+text = "A guan, e peich, agromenaguer . Que vamos a llamar a la Meretérita! Bien, cobarde!"
+drag_and_drop_selection_enabled = false
+
+[node name="cuatro" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 844.0
+offset_top = 622.0
+offset_right = 1715.0
+offset_bottom = 963.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_qmct3")
+theme_override_font_sizes/normal_font_size = 45
+text = "Al ataaquerrr!! eso está muy bien , muy bien, muy bien, ¿¿Te da cuen?!"
+drag_and_drop_selection_enabled = false
+
+[node name="cinco" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 844.0
+offset_top = 622.0
+offset_right = 1715.0
+offset_bottom = 963.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_qmct3")
+theme_override_font_sizes/normal_font_size = 45
+text = "Eres más peligroso que un tiroteo en un ascensor. Ohhh.. ! que arte tienes ...! siete caballos vienen de bonansaaa ... ... .ole, ole, ole ..."
+drag_and_drop_selection_enabled = false
+
+[node name="Chiquito" type="AnimatedSprite2D" parent="."]
+position = Vector2(460, 824)
+sprite_frames = SubResource("SpriteFrames_ccaiw")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1481.0
+offset_top = 80.0
+offset_right = 1903.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_qmct3")
+theme_override_font_sizes/font_size = 55
+text = "Volveh"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

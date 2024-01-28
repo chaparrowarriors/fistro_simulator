@@ -17,7 +17,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	reloj += delta
+	if !Global.pause:
+		reloj += delta
 	var secs = int(floor(reloj))
 	var mins = int(floor(reloj))/60
 	secs = secs % 60
@@ -26,6 +27,8 @@ func _process(delta):
 	if mins < 10:
 		mins = str("0", mins)
 	$Reloj/Hora.text = str(mins, ":",secs)
+	if int(mins) >= 1:
+		puntuacion()
 	checkAnimo()
 	pass
 	
@@ -52,6 +55,9 @@ func _input(event):
 	
 	if Input.is_action_just_pressed("Jump"):
 		checkBaile()
+		
+	if Input.is_action_just_pressed("Pause"):
+		pausa()
 	
 	Global.zonaChiquito = $Chiquito.position.x / 1920
 
@@ -122,3 +128,7 @@ func puntuacion():
 	Global.puntuacionFinal = $Publico1.get("animo") + $Publico2.get("animo") + $Publico3.get("animo") + $Publico4.get("animo") + $Publico5.get("animo")
 	print($Publico1.get("animo"), " - ", $Publico2.get("animo"), " - ", $Publico3.get("animo"), " - ", $Publico4.get("animo"), " - ", $Publico5.get("animo"))
 	print(Global.puntuacionFinal)
+	get_tree().change_scene_to_file("res://Scenes/Menu/Puntuacion.tscn")
+
+func pausa():
+	Global.pause = !Global.pause
