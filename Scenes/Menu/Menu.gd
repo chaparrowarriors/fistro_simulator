@@ -23,7 +23,7 @@ func _process(delta):
 		$Foco2.visible = false
 
 func _input(event):
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("Jump"):#Input.is_action_just_pressed("ui_up"):
 		if Global.zonaChiquito < 0.33:
 			pass
 		elif Global.zonaChiquito > 0.33 and Global.zonaChiquito < 0.66:
